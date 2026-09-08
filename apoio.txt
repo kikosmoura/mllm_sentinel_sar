@@ -1,0 +1,6 @@
+python3 prepare_sen1floods11_classification.py \
+  --s1-dir "$PWD/sen1floods11/HandLabeled/S1Hand" \
+  --label-dir "$PWD/sen1floods11/HandLabeled/LabelHand" \
+  --output sen1floods11_classification.csv \
+  --non-water-threshold 1 \
+  --water-threshold 10

@@ -1,0 +1,133 @@
+{
+  "bands": {
+    "1": "VV",
+    "2": "VH"
+  },
+  "feature_count": 24,
+  "feature_names": [
+    "vv_mean",
+    "vv_std",
+    "vv_min",
+    "vv_max",
+    "vv_median",
+    "vv_p10",
+    "vv_p25",
+    "vv_p75",
+    "vv_p90",
+    "vh_mean",
+    "vh_std",
+    "vh_min",
+    "vh_max",
+    "vh_median",
+    "vh_p10",
+    "vh_p25",
+    "vh_p75",
+    "vh_p90",
+    "vv_minus_vh_mean",
+    "vv_minus_vh_std",
+    "vv_minus_vh_median",
+    "vv_div_vh_mean",
+    "vv_div_vh_std",
+    "vv_div_vh_median"
+  ],
+  "feature_source": "Sentinel-1 GeoTIFF bands only",
+  "imputation": {
+    "imputed_cells_by_split": {
+      "test": 0,
+      "train": 24,
+      "validation": 0
+    },
+    "strategy": "per-feature median fitted on train only",
+    "values_by_feature": {
+      "vh_max": -5.561323642730713,
+      "vh_mean": -17.0605065197963,
+      "vh_median": -16.536535263061523,
+      "vh_min": -47.37569046020508,
+      "vh_p10": -21.071336364746095,
+      "vh_p25": -18.754567623138428,
+      "vh_p75": -14.729609727859497,
+      "vh_p90": -13.231150245666504,
+      "vh_std": 3.4902238411574653,
+      "vv_div_vh_mean": 0.6135244974477739,
+      "vv_div_vh_median": 0.6049177919437507,
+      "vv_div_vh_std": 0.15948654192625983,
+      "vv_max": 6.3225579261779785,
+      "vv_mean": -10.382733554593983,
+      "vv_median": -9.932810306549072,
+      "vv_min": -31.234445571899414,
+      "vv_minus_vh_mean": 6.530469778800551,
+      "vv_minus_vh_median": 6.442684650421143,
+      "vv_minus_vh_std": 3.0855928128148102,
+      "vv_p10": -14.005937004089356,
+      "vv_p25": -11.935690641403198,
+      "vv_p75": -8.133978843688965,
+      "vv_p90": -6.742887783050537,
+      "vv_std": 3.0627901825199504
+    },
+    "values_in_feature_order": [
+      -10.382733554593983,
+      3.0627901825199504,
+      -31.234445571899414,
+      6.3225579261779785,
+      -9.932810306549072,
+      -14.005937004089356,
+      -11.935690641403198,
+      -8.133978843688965,
+      -6.742887783050537,
+      -17.0605065197963,
+      3.4902238411574653,
+      -47.37569046020508,
+      -5.561323642730713,
+      -16.536535263061523,
+      -21.071336364746095,
+      -18.754567623138428,
+      -14.729609727859497,
+      -13.231150245666504,
+      6.530469778800551,
+      3.0855928128148102,
+      6.442684650421143,
+      0.6135244974477739,
+      0.15948654192625983,
+      0.6049177919437507
+    ]
+  },
+  "invalid_pixels": "NoData, NaN and infinity ignored; division by zero ignored",
+  "model": {
+    "class_weight": "balanced",
+    "n_estimators": 500,
+    "n_jobs": -1,
+    "random_state": 42,
+    "type": "RandomForestClassifier"
+  },
+  "statistics": {
+    "standard_deviation_ddof": 0,
+    "vv_div_vh": [
+      "mean",
+      "std",
+      "median"
+    ],
+    "vv_minus_vh": [
+      "mean",
+      "std",
+      "median"
+    ],
+    "vv_vh": [
+      "mean",
+      "std",
+      "min",
+      "max",
+      "median",
+      "p10",
+      "p25",
+      "p75",
+      "p90"
+    ]
+  },
+  "versions": {
+    "joblib": "1.6.0",
+    "matplotlib": "3.10.9",
+    "numpy": "2.2.6",
+    "rasterio": "1.4.4",
+    "scikit_learn": "1.7.2"
+  }
+}

@@ -1,0 +1,3 @@
+model,adapter,split,representation,accuracy,balanced_accuracy,precision,recall,f1,invalid_responses,samples,inference_seconds
+HuggingFaceTB/SmolVLM-256M-Instruct,/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter,validation,pseudo_rgb,0.65,0.65,0.6153846153846154,0.8,0.6956521739130435,0,40,62.83223055291455
+HuggingFaceTB/SmolVLM-256M-Instruct,/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter,test,pseudo_rgb,0.675,0.6790281329923273,0.6,0.7058823529411765,0.6486486486486486,0,40,66.40242817392573

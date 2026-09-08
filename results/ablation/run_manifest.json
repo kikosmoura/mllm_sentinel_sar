@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "pseudo_rgb": {
+      "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter",
+      "fine_tuning": "reused",
+      "finetuned_inference": "reused",
+      "zero_shot": "reused"
+    },
+    "vh": {
+      "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter_vh",
+      "fine_tuning": "executed",
+      "finetuned_inference": "executed",
+      "zero_shot": "executed"
+    },
+    "vv": {
+      "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter_vv",
+      "fine_tuning": "executed",
+      "finetuned_inference": "executed",
+      "zero_shot": "executed"
+    }
+  },
+  "model_id": "HuggingFaceTB/SmolVLM-256M-Instruct",
+  "only_representation_changes": true,
+  "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+  "representations": [
+    "vv",
+    "vh",
+    "pseudo_rgb"
+  ],
+  "revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+  "split_samples": {
+    "test": 40,
+    "train": 188,
+    "validation": 40
+  },
+  "split_sha256": {
+    "test": "b09ac2f4bd9149c41c85fc593629694a96497a44246981d10c36ac759c0ed91f",
+    "train": "ad47abee8ae2f427c4594f8dcfb210c890dade673a55d4b3c724ed7a6a6f388e",
+    "validation": "1fce5de9ee3b6c2844eb7c20463e380e37605077ea2130552bdd8fe3759b67f1"
+  },
+  "status": "complete",
+  "timestamp_utc": "2026-09-07T18:17:00.384320+00:00"
+}

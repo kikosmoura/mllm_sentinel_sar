@@ -1,0 +1,4 @@
+Model,SAR Representation,Accuracy,Balanced Accuracy,Precision,Recall,F1,Invalid Predictions
+Random Forest,vv_vh_features,0.85,0.8312020460358056,0.9230769230769231,0.7058823529411765,0.8000000000000002,0
+MLLM Zero-Shot,pseudo_rgb,0.425,0.5,0.425,1.0,0.5964912280701754,0
+MLLM Fine-Tuned,pseudo_rgb,0.675,0.6790281329923273,0.6,0.7058823529411765,0.6486486486486486,0

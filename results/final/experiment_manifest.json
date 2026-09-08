@@ -1,0 +1,430 @@
+{
+  "ablation_execution": {
+    "actions": {
+      "pseudo_rgb": {
+        "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter",
+        "fine_tuning": "reused",
+        "finetuned_inference": "reused",
+        "zero_shot": "reused"
+      },
+      "vh": {
+        "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter_vh",
+        "fine_tuning": "executed",
+        "finetuned_inference": "executed",
+        "zero_shot": "executed"
+      },
+      "vv": {
+        "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter_vv",
+        "fine_tuning": "executed",
+        "finetuned_inference": "executed",
+        "zero_shot": "executed"
+      }
+    },
+    "model_id": "HuggingFaceTB/SmolVLM-256M-Instruct",
+    "only_representation_changes": true,
+    "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+    "representations": [
+      "vv",
+      "vh",
+      "pseudo_rgb"
+    ],
+    "revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+    "split_samples": {
+      "test": 40,
+      "train": 188,
+      "validation": 40
+    },
+    "split_sha256": {
+      "test": "b09ac2f4bd9149c41c85fc593629694a96497a44246981d10c36ac759c0ed91f",
+      "train": "ad47abee8ae2f427c4594f8dcfb210c890dade673a55d4b3c724ed7a6a6f388e",
+      "validation": "1fce5de9ee3b6c2844eb7c20463e380e37605077ea2130552bdd8fe3759b67f1"
+    },
+    "status": "complete",
+    "timestamp_utc": "2026-09-07T18:17:00.384320+00:00"
+  },
+  "best_finetuned_representation_by_test_f1": "pseudo_rgb",
+  "bootstrap_samples": 1000,
+  "confidence_interval": "95% percentile bootstrap on test samples",
+  "dataset": "Sen1Floods11 HandLabeled binary chip classification",
+  "evaluation_views": {
+    "strict": "invalid predictions count as classification errors",
+    "valid-only": "metrics only on parseable predictions"
+  },
+  "experiment_timestamp_utc": "2026-09-07T23:02:20.530251+00:00",
+  "hardware": {
+    "cpu_count": 12,
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_devices": [],
+    "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python": "3.10.12",
+    "ram_bytes": 33288433664
+  },
+  "lora_configuration_by_representation": {
+    "pseudo_rgb": {
+      "base_model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+      "batch_size": 1,
+      "best_checkpoint": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter/checkpoints/checkpoint-24",
+      "best_validation_loss": 0.1402788907289505,
+      "do_image_splitting": false,
+      "early_stopping_patience": 2,
+      "epochs": 1.0,
+      "gradient_accumulation_steps": 8,
+      "gradient_checkpointing": false,
+      "hardware": {
+        "cpu_count": 12,
+        "cuda_available": false,
+        "cuda_device_count": 0,
+        "cuda_devices": [],
+        "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+        "processor": "x86_64",
+        "python": "3.10.12",
+        "ram_bytes": 33288433664
+      },
+      "learning_rate": 0.0002,
+      "library_versions": {
+        "Pillow": "12.3.0",
+        "accelerate": "1.14.0",
+        "bitsandbytes": null,
+        "datasets": "5.0.1",
+        "peft": "0.20.0",
+        "torch": "2.14.0+cpu",
+        "transformers": "5.16.1"
+      },
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "lora_r": 8,
+      "lora_target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+      "quantization": "none",
+      "representation": "pseudo_rgb",
+      "requested_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "resolved_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "seed": 42,
+      "test_samples_used": 0,
+      "total_parameters": 259369536,
+      "train_loss": 0.6148506887257099,
+      "trainable_parameters": 2884608,
+      "trainable_percentage": 1.1121614529163517,
+      "training_samples": 188,
+      "training_seconds": 836.5399139180081,
+      "validation_samples": 40
+    },
+    "vh": {
+      "base_model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+      "batch_size": 1,
+      "best_checkpoint": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter_vh/checkpoints/checkpoint-24",
+      "best_validation_loss": 0.14687183499336243,
+      "do_image_splitting": false,
+      "early_stopping_patience": 2,
+      "epochs": 1.0,
+      "gradient_accumulation_steps": 8,
+      "gradient_checkpointing": false,
+      "hardware": {
+        "cpu_count": 12,
+        "cuda_available": false,
+        "cuda_device_count": 0,
+        "cuda_devices": [],
+        "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+        "processor": "x86_64",
+        "python": "3.10.12",
+        "ram_bytes": 33288433664
+      },
+      "learning_rate": 0.0002,
+      "library_versions": {
+        "Pillow": "12.3.0",
+        "accelerate": "1.14.0",
+        "bitsandbytes": null,
+        "datasets": "5.0.1",
+        "peft": "0.20.0",
+        "torch": "2.14.0+cpu",
+        "transformers": "5.16.1"
+      },
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "lora_r": 8,
+      "lora_target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+      "quantization": "none",
+      "representation": "vh",
+      "requested_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "resolved_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "seed": 42,
+      "test_samples_used": 0,
+      "total_parameters": 259369536,
+      "train_loss": 0.6590007546668252,
+      "trainable_parameters": 2884608,
+      "trainable_percentage": 1.1121614529163517,
+      "training_samples": 188,
+      "training_seconds": 865.8570069160778,
+      "validation_samples": 40
+    },
+    "vv": {
+      "base_model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+      "batch_size": 1,
+      "best_checkpoint": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter_vv/checkpoints/checkpoint-24",
+      "best_validation_loss": 0.1299864500761032,
+      "do_image_splitting": false,
+      "early_stopping_patience": 2,
+      "epochs": 1.0,
+      "gradient_accumulation_steps": 8,
+      "gradient_checkpointing": false,
+      "hardware": {
+        "cpu_count": 12,
+        "cuda_available": false,
+        "cuda_device_count": 0,
+        "cuda_devices": [],
+        "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+        "processor": "x86_64",
+        "python": "3.10.12",
+        "ram_bytes": 33288433664
+      },
+      "learning_rate": 0.0002,
+      "library_versions": {
+        "Pillow": "12.3.0",
+        "accelerate": "1.14.0",
+        "bitsandbytes": null,
+        "datasets": "5.0.1",
+        "peft": "0.20.0",
+        "torch": "2.14.0+cpu",
+        "transformers": "5.16.1"
+      },
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "lora_r": 8,
+      "lora_target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+      "quantization": "none",
+      "representation": "vv",
+      "requested_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "resolved_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "seed": 42,
+      "test_samples_used": 0,
+      "total_parameters": 259369536,
+      "train_loss": 0.6304764493058125,
+      "trainable_parameters": 2884608,
+      "trainable_percentage": 1.1121614529163517,
+      "training_samples": 188,
+      "training_seconds": 926.488365998026,
+      "validation_samples": 40
+    }
+  },
+  "mllm_base_model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+  "mllm_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+  "models": [
+    "Random Forest",
+    "MLLM Zero-Shot",
+    "MLLM Fine-Tuned"
+  ],
+  "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+  "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+  "random_forest_configuration": {
+    "bands": {
+      "1": "VV",
+      "2": "VH"
+    },
+    "feature_count": 24,
+    "feature_names": [
+      "vv_mean",
+      "vv_std",
+      "vv_min",
+      "vv_max",
+      "vv_median",
+      "vv_p10",
+      "vv_p25",
+      "vv_p75",
+      "vv_p90",
+      "vh_mean",
+      "vh_std",
+      "vh_min",
+      "vh_max",
+      "vh_median",
+      "vh_p10",
+      "vh_p25",
+      "vh_p75",
+      "vh_p90",
+      "vv_minus_vh_mean",
+      "vv_minus_vh_std",
+      "vv_minus_vh_median",
+      "vv_div_vh_mean",
+      "vv_div_vh_std",
+      "vv_div_vh_median"
+    ],
+    "feature_source": "Sentinel-1 GeoTIFF bands only",
+    "imputation": {
+      "imputed_cells_by_split": {
+        "test": 0,
+        "train": 24,
+        "validation": 0
+      },
+      "strategy": "per-feature median fitted on train only",
+      "values_by_feature": {
+        "vh_max": -5.561323642730713,
+        "vh_mean": -17.0605065197963,
+        "vh_median": -16.536535263061523,
+        "vh_min": -47.37569046020508,
+        "vh_p10": -21.071336364746095,
+        "vh_p25": -18.754567623138428,
+        "vh_p75": -14.729609727859497,
+        "vh_p90": -13.231150245666504,
+        "vh_std": 3.4902238411574653,
+        "vv_div_vh_mean": 0.6135244974477739,
+        "vv_div_vh_median": 0.6049177919437507,
+        "vv_div_vh_std": 0.15948654192625983,
+        "vv_max": 6.3225579261779785,
+        "vv_mean": -10.382733554593983,
+        "vv_median": -9.932810306549072,
+        "vv_min": -31.234445571899414,
+        "vv_minus_vh_mean": 6.530469778800551,
+        "vv_minus_vh_median": 6.442684650421143,
+        "vv_minus_vh_std": 3.0855928128148102,
+        "vv_p10": -14.005937004089356,
+        "vv_p25": -11.935690641403198,
+        "vv_p75": -8.133978843688965,
+        "vv_p90": -6.742887783050537,
+        "vv_std": 3.0627901825199504
+      },
+      "values_in_feature_order": [
+        -10.382733554593983,
+        3.0627901825199504,
+        -31.234445571899414,
+        6.3225579261779785,
+        -9.932810306549072,
+        -14.005937004089356,
+        -11.935690641403198,
+        -8.133978843688965,
+        -6.742887783050537,
+        -17.0605065197963,
+        3.4902238411574653,
+        -47.37569046020508,
+        -5.561323642730713,
+        -16.536535263061523,
+        -21.071336364746095,
+        -18.754567623138428,
+        -14.729609727859497,
+        -13.231150245666504,
+        6.530469778800551,
+        3.0855928128148102,
+        6.442684650421143,
+        0.6135244974477739,
+        0.15948654192625983,
+        0.6049177919437507
+      ]
+    },
+    "invalid_pixels": "NoData, NaN and infinity ignored; division by zero ignored",
+    "model": {
+      "class_weight": "balanced",
+      "n_estimators": 500,
+      "n_jobs": -1,
+      "random_state": 42,
+      "type": "RandomForestClassifier"
+    },
+    "statistics": {
+      "standard_deviation_ddof": 0,
+      "vv_div_vh": [
+        "mean",
+        "std",
+        "median"
+      ],
+      "vv_minus_vh": [
+        "mean",
+        "std",
+        "median"
+      ],
+      "vv_vh": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "median",
+        "p10",
+        "p25",
+        "p75",
+        "p90"
+      ]
+    },
+    "versions": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.9",
+      "numpy": "2.2.6",
+      "rasterio": "1.4.4",
+      "scikit_learn": "1.7.2"
+    }
+  },
+  "random_seed": 42,
+  "representations": [
+    "vv",
+    "vh",
+    "pseudo_rgb"
+  ],
+  "scientific_validations": {
+    "forbidden_mllm_inputs": [],
+    "no_test_events_in_train": true,
+    "no_test_ids_in_training_jsonl": true,
+    "only_sar_representation_changes_in_ablation": true,
+    "prediction_rows": 280,
+    "same_test_ids_all_conditions": true,
+    "same_true_labels_all_conditions": true,
+    "test_samples_used_for_training": 0
+  },
+  "software_versions": {
+    "Pillow": "12.3.0",
+    "accelerate": "1.14.0",
+    "matplotlib": "3.10.9",
+    "numpy": "2.2.6",
+    "peft": "0.20.0",
+    "scikit-learn": "1.7.2",
+    "torch": "2.14.0+cpu",
+    "transformers": "5.16.1"
+  },
+  "split_sha256": {
+    "test": "b09ac2f4bd9149c41c85fc593629694a96497a44246981d10c36ac759c0ed91f",
+    "train": "ad47abee8ae2f427c4594f8dcfb210c890dade673a55d4b3c724ed7a6a6f388e",
+    "validation": "1fce5de9ee3b6c2844eb7c20463e380e37605077ea2130552bdd8fe3759b67f1"
+  },
+  "test_events": [
+    "Somalia",
+    "Sri-Lanka"
+  ],
+  "test_samples": 40,
+  "train_events": [
+    "Ghana",
+    "India",
+    "Mekong",
+    "Nigeria",
+    "Paraguay",
+    "USA"
+  ],
+  "train_samples": 188,
+  "validation_events": [
+    "Bolivia",
+    "Pakistan",
+    "Spain"
+  ],
+  "validation_samples": 40
+}

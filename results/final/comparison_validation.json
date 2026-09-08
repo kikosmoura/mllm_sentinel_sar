@@ -1,0 +1,10 @@
+{
+  "forbidden_inputs": [],
+  "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+  "test_ids_equal_across_models": true,
+  "test_samples": 40,
+  "test_samples_used_by_lora": 0,
+  "train_test_event_overlap": 0,
+  "train_test_id_overlap": 0,
+  "true_labels_equal_across_models": true
+}

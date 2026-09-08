@@ -1,0 +1,116 @@
+{
+  "hardware": {
+    "cpu_count": 12,
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_devices": [],
+    "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python": "3.10.12",
+    "ram_bytes": 33288433664
+  },
+  "library_versions": {
+    "Pillow": "12.3.0",
+    "accelerate": "1.14.0",
+    "bitsandbytes": null,
+    "datasets": "5.0.1",
+    "peft": "0.20.0",
+    "torch": "2.14.0+cpu",
+    "transformers": "5.16.1"
+  },
+  "runs": {
+    "fine_tuning": {
+      "best_checkpoint": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter/checkpoints/checkpoint-24",
+      "best_validation_loss": 0.1402788907289505,
+      "do_image_splitting": false,
+      "model_id": "HuggingFaceTB/SmolVLM-256M-Instruct",
+      "quantization": "LoRA (none)",
+      "recorded_unix_time": 1788800230.6587918,
+      "representation": "pseudo_rgb",
+      "requested_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "resolved_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "status": "complete",
+      "test_samples_used": 0,
+      "total_parameters": 259369536,
+      "trainable_parameters": 2884608,
+      "training_parameters": {
+        "batch_size": 1,
+        "epochs": 1.0,
+        "gradient_accumulation_steps": 8,
+        "learning_rate": 0.0002,
+        "lora_alpha": 16,
+        "lora_dropout": 0.05,
+        "lora_r": 8,
+        "seed": 42,
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ]
+      },
+      "training_samples": 188,
+      "training_seconds": 836.5399139180081,
+      "validation_samples": 40
+    },
+    "finetuned": {
+      "adapter_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/models/mllm_adapter",
+      "deterministic_generation": {
+        "do_sample": false,
+        "max_new_tokens": 8
+      },
+      "device": "cpu",
+      "do_image_splitting": false,
+      "dtype": "torch.float32",
+      "inference_errors": [],
+      "invalid_responses": {
+        "test": 0,
+        "validation": 0
+      },
+      "model_id": "HuggingFaceTB/SmolVLM-256M-Instruct",
+      "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+      "recorded_unix_time": 1788800375.3748767,
+      "representation": "pseudo_rgb",
+      "requested_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "resolved_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "samples": {
+        "test": 40,
+        "train": 188,
+        "validation": 40
+      },
+      "status": "complete",
+      "total_inference_seconds": 129.23703238007147
+    },
+    "zero_shot": {
+      "adapter_path": null,
+      "deterministic_generation": {
+        "do_sample": false,
+        "max_new_tokens": 8
+      },
+      "device": "cpu",
+      "do_image_splitting": false,
+      "dtype": "torch.float32",
+      "inference_errors": [],
+      "invalid_responses": {
+        "test": 0,
+        "validation": 0
+      },
+      "model_id": "HuggingFaceTB/SmolVLM-256M-Instruct",
+      "prompt_sha256": "71855a60ec8ced7f9d05effa559f7cc029a35583c78d07ea5bb7220f86ff1e33",
+      "recorded_unix_time": 1788799250.3342605,
+      "representation": "pseudo_rgb",
+      "requested_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "resolved_revision": "7e3e67edbbed1bf9888184d9df282b700a323964",
+      "samples": {
+        "test": 40,
+        "train": 188,
+        "validation": 40
+      },
+      "status": "complete",
+      "total_inference_seconds": 118.69259294099174
+    }
+  }
+}

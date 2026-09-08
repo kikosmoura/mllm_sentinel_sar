@@ -1,0 +1,4 @@
+split,events,samples,water,non_water,water_percentage
+train,Ghana;India;Mekong;Nigeria;Paraguay;USA,188,83,105,44.148936170212764
+validation,Bolivia;Pakistan;Spain,40,20,20,50.0
+test,Somalia;Sri-Lanka,40,17,23,42.5
