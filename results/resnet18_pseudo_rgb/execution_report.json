@@ -1,0 +1,89 @@
+{
+  "artifacts_sha256": {
+    "models/resnet18_pseudo_rgb/best_checkpoint.pt": "d3e2a04992c4eed19d67a1e2b7c28632f8da293f1c4dff6c652e2180f3d2add4",
+    "models/resnet18_pseudo_rgb/training_config.json": "c634b4437b01c996f8805ce58c0b3eaafb61031bd7be8318eb48e56cd4ebec08",
+    "results/resnet18_pseudo_rgb/code_provenance.json": "bae08d0e92fbeb75f73fa82148ef8ba017f7c2c5eac64d51727d17e354e37681",
+    "results/resnet18_pseudo_rgb/confusion_matrix_test.png": "c18a5913ecca321b672d31d04ab751c011e40c2dd4a739d519b92965b50a8e02",
+    "results/resnet18_pseudo_rgb/confusion_matrix_validation.png": "952d4ab8c31708c071f8be88a9fbb8d7365a9fa7df1c1194c5551cb4a76a7a31",
+    "results/resnet18_pseudo_rgb/evaluation.log": "d6d8cc02ba0bc9fa5411f82563b3b156f917a12bd0ba8743e18944ba518dd83c",
+    "results/resnet18_pseudo_rgb/evaluation_manifest.json": "62bc56fb26070fb5d153b8e26db392548bfd9ba21a84cd81d1a24cf3726a6d6a",
+    "results/resnet18_pseudo_rgb/execution_benchmark.json": "55e634e73c104fced5ecd95e0cfb9b7efe1a0330efc4df145ffc52a139b5c161",
+    "results/resnet18_pseudo_rgb/metrics.csv": "b1f23a757f004dfe5f47f1e72149bb4f3af8b9f76dbed194f86da4ea056993ec",
+    "results/resnet18_pseudo_rgb/preflight_split_audit.json": "20b4f009bb25c133228e72d435fdf42ae066770664d916ba172328d5096ef054",
+    "results/resnet18_pseudo_rgb/test_predictions.csv": "3d182a0a72e4b71459f0afca1199d00302981ee491cd61fc9f6bdfe30ae66e31",
+    "results/resnet18_pseudo_rgb/training.log": "a0d4d1b5945eab3e3c64ace438661220c441d24ca8c030dbeb1a7461a0720059",
+    "results/resnet18_pseudo_rgb/training_history.csv": "ea6aaff97f3126cf7f2816bb915c1a39bffca020e45fafc52446c918439b173f",
+    "results/resnet18_pseudo_rgb/training_summary.json": "c634b4437b01c996f8805ce58c0b3eaafb61031bd7be8318eb48e56cd4ebec08",
+    "results/resnet18_pseudo_rgb/training_verification.json": "7f6e89cf1254374ebabde5f7dbbb22331566b97873f85ad54a6b46f64bdaec79",
+    "results/resnet18_pseudo_rgb/validation_predictions.csv": "eca796171214382d3a8456c9d71cfb9e759e4019a1c43add3c7b3f8df418230b"
+  },
+  "best_epoch": 7,
+  "best_phase": "layer4+fc",
+  "epochs_executed": 12,
+  "evaluation_command": "venv/bin/python -u 13_evaluate_resnet18.py --checkpoint models/resnet18_pseudo_rgb/best_checkpoint.pt --splits validation test --batch-size 8 --bootstrap-samples 1000 --device cpu --threads 4",
+  "inference_seconds": {
+    "test": 1.287765526009025,
+    "validation": 1.2817298860027222
+  },
+  "metrics_strict": {
+    "test": {
+      "accuracy": 0.9,
+      "balanced_accuracy": 0.8900255754475703,
+      "balanced_accuracy_ci_high": 0.9782608695652174,
+      "balanced_accuracy_ci_low": 0.7813279251918158,
+      "f1": 0.8749999999999999,
+      "f1_ci_high": 0.9743589743589743,
+      "f1_ci_low": 0.7331818181818183,
+      "precision": 0.9333333333333333,
+      "recall": 0.8235294117647058,
+      "roc_auc": 0.9156010230179028
+    },
+    "validation": {
+      "accuracy": 0.925,
+      "balanced_accuracy": 0.925,
+      "balanced_accuracy_ci_high": 1.0,
+      "balanced_accuracy_ci_low": 0.8399718670076727,
+      "f1": 0.9268292682926829,
+      "f1_ci_high": 1.0,
+      "f1_ci_low": 0.8331896551724137,
+      "precision": 0.9047619047619048,
+      "recall": 0.95,
+      "roc_auc": 0.9525
+    }
+  },
+  "original_files_changed": [],
+  "original_files_verified": 116,
+  "prediction_checks": {
+    "test": {
+      "events": [
+        "Somalia",
+        "Sri-Lanka"
+      ],
+      "ids_events_labels_match": true,
+      "max_probability_sum_error": 0.0,
+      "same_csv_order": true,
+      "samples": 40,
+      "valid_predictions": 40
+    },
+    "validation": {
+      "events": [
+        "Bolivia",
+        "Pakistan",
+        "Spain"
+      ],
+      "ids_events_labels_match": true,
+      "max_probability_sum_error": 0.0,
+      "same_csv_order": true,
+      "samples": 40,
+      "valid_predictions": 40
+    }
+  },
+  "protocol": "pseudo_rgb, seed 42, batch 8, fc warmup 3, layer4+fc, max 25, patience 5; selected solely on validation",
+  "status": "complete",
+  "stop_reason": "early_stopping",
+  "test_ids_labels_same_as_existing_models": true,
+  "test_samples_used_for_selection": 0,
+  "test_samples_used_for_training": 0,
+  "training_command": "venv/bin/python -u 12_train_resnet18.py --representation pseudo_rgb --seed 42 --batch-size 8 --mode layer4+fc --warmup-epochs 3 --epochs 25 --patience 5 --lr-fc 1e-3 --lr-layer4 1e-4 --weight-decay 1e-4 --device cpu --threads 4 --weights-cache /tmp/resnet18-verification/weights --split-audit /tmp/resnet18_preflight_split_audit.json",
+  "training_seconds": 142.38800580101088
+}

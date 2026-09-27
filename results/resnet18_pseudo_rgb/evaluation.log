@@ -1,0 +1,2 @@
+validation: samples=40 accuracy=0.925000 balanced_accuracy=0.925000 f1=0.926829 seconds=1.28
+test: samples=40 accuracy=0.900000 balanced_accuracy=0.890026 f1=0.875000 seconds=1.29

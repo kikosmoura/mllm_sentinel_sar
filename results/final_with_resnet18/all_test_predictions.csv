@@ -1,0 +1,321 @@
+image_id,event,true_class,true_class_id,model,training,representation,predicted_class,prediction_valid,raw_response,probability_non_water,probability_water
+Somalia_12849,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.11,0.89
+Somalia_166342,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.96,0.04
+Somalia_167787,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,WATER,True,,0.378,0.622
+Somalia_195014,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.99,0.01
+Somalia_205466,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.978,0.022
+Somalia_230192,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.736,0.264
+Somalia_256539,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.606,0.394
+Somalia_322855,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.272,0.728
+Somalia_32375,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.768,0.232
+Somalia_371421,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.774,0.226
+Somalia_60129,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.928,0.072
+Somalia_61368,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.974,0.026
+Somalia_626316,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.168,0.832
+Somalia_685158,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.484,0.516
+Somalia_7931,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.992,0.008
+Somalia_886726,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.162,0.838
+Somalia_93023,Somalia,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.81,0.19
+Somalia_970508,Somalia,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.036,0.964
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.978,0.022
+Sri-Lanka_14484,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.882,0.118
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.946,0.054
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.96,0.04
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.97,0.03
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.964,0.036
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.938,0.062
+Sri-Lanka_321316,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.296,0.704
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.972,0.028
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.994,0.006
+Sri-Lanka_523539,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.71,0.29
+Sri-Lanka_534068,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.406,0.594
+Sri-Lanka_612594,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.622,0.378
+Sri-Lanka_713926,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.016,0.984
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.958,0.042
+Sri-Lanka_845821,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.43,0.57
+Sri-Lanka_847275,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.146,0.854
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.988,0.012
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.946,0.054
+Sri-Lanka_916628,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,WATER,True,,0.212,0.788
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.956,0.044
+Sri-Lanka_92824,Sri-Lanka,WATER,1,Random Forest,supervised,vv_vh_features,NON_WATER,True,,0.678,0.322
+Somalia_12849,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.014003185213001146,0.9859968147869989
+Somalia_166342,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9964237828668677,0.0035762171331322878
+Somalia_167787,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.6836832502630427,0.31631674973695734
+Somalia_195014,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9999972116750182,2.7883249817564736e-06
+Somalia_205466,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9997668855947293,0.00023311440527078913
+Somalia_230192,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.634662446040609,0.36533755395939105
+Somalia_256539,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9026458274084566,0.09735417259154348
+Somalia_322855,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.0026595052448803447,0.9973404947551197
+Somalia_32375,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.955401900597174,0.04459809940282603
+Somalia_371421,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.0032258495745933757,0.9967741504254066
+Somalia_60129,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.8281537489040571,0.1718462510959429
+Somalia_61368,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9999668347218936,3.316527810636183e-05
+Somalia_626316,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.002085846160581828,0.9979141538394182
+Somalia_685158,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.001427896231042447,0.9985721037689576
+Somalia_7931,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9999514969796874,4.850302031261089e-05
+Somalia_886726,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.0014074633385491309,0.9985925366614509
+Somalia_93023,Somalia,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9715727327958124,0.02842726720418762
+Somalia_970508,Somalia,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.0012773822066690643,0.9987226177933309
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9965599563672002,0.0034400436327997734
+Sri-Lanka_14484,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9809697921355959,0.01903020786440412
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.2406994550353,0.7593005449647
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9999383067010249,6.169329897509026e-05
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9999596711236463,4.032887635370826e-05
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9977959432650112,0.0022040567349887606
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9983425563535158,0.0016574436464842108
+Sri-Lanka_321316,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,3.9906015403268214e-07,0.999999600939846
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9999567312273129,4.3268772687154785e-05
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9867109149960602,0.013289085003939795
+Sri-Lanka_523539,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.000341541113024979,0.999658458886975
+Sri-Lanka_534068,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9965152000317911,0.0034847999682089937
+Sri-Lanka_612594,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,2.07661217088706e-06,0.9999979233878291
+Sri-Lanka_713926,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.00011033880453714673,0.9998896611954629
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9990796449462186,0.00092035505378143
+Sri-Lanka_845821,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9994545461048441,0.000545453895155896
+Sri-Lanka_847275,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,1.9964229188373928e-05,0.9999800357708116
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9988306326002562,0.0011693673997438799
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.9998422255285196,0.00015777447148034057
+Sri-Lanka_916628,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,9.836452498190873e-06,0.9999901635475018
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,ResNet-18,supervised-transfer-learning,pseudo_rgb,NON_WATER,True,,0.966825847123595,0.03317415287640497
+Sri-Lanka_92824,Sri-Lanka,WATER,1,ResNet-18,supervised-transfer-learning,pseudo_rgb,WATER,True,,0.1294399032187249,0.8705600967812751
+Somalia_12849,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_166342,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_167787,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_195014,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_205466,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_230192,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_256539,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_322855,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_32375,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER,,
+Somalia_371421,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_60129,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_61368,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_626316,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_685158,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_7931,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_886726,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_93023,Somalia,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_970508,Somalia,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_14484,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER,,
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_321316,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,Water.,,
+Sri-Lanka_523539,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_534068,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER,,
+Sri-Lanka_612594,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_713926,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_845821,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_847275,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_916628,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Sri-Lanka_92824,Sri-Lanka,WATER,1,MLLM,zero-shot,vv,WATER,True,WATER.,,
+Somalia_12849,Somalia,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Somalia_166342,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_167787,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Somalia_195014,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_205466,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_230192,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_256539,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_322855,Somalia,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_32375,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_371421,Somalia,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_60129,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_61368,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_626316,Somalia,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Somalia_685158,Somalia,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Somalia_7931,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Somalia_886726,Somalia,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_93023,Somalia,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_970508,Somalia,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_14484,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_321316,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_523539,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_534068,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_612594,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_713926,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_845821,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_847275,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_916628,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,WATER,True,WATER,,
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Sri-Lanka_92824,Sri-Lanka,WATER,1,MLLM,fine-tuned,vv,NON_WATER,True,NON_WATER,,
+Somalia_12849,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_166342,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_167787,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_195014,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_205466,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_230192,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_256539,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_322855,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_32375,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER,,
+Somalia_371421,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_60129,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_61368,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_626316,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_685158,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_7931,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_886726,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_93023,Somalia,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_970508,Somalia,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_14484,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_321316,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_523539,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_534068,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER,,
+Sri-Lanka_612594,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_713926,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_845821,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER,,
+Sri-Lanka_847275,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_916628,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Sri-Lanka_92824,Sri-Lanka,WATER,1,MLLM,zero-shot,vh,WATER,True,WATER.,,
+Somalia_12849,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_166342,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_167787,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_195014,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_205466,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_230192,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_256539,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_322855,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_32375,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_371421,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_60129,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_61368,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_626316,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_685158,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_7931,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_886726,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_93023,Somalia,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_970508,Somalia,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,NON_WATER,True,NON_WATER,,
+Sri-Lanka_14484,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,NON_WATER,True,NON_WATER,,
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_321316,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_523539,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_534068,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_612594,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_713926,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_845821,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_847275,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_916628,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Sri-Lanka_92824,Sri-Lanka,WATER,1,MLLM,fine-tuned,vh,WATER,True,WATER,,
+Somalia_12849,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_166342,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER,,
+Somalia_167787,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_195014,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_205466,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_230192,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_256539,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_322855,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_32375,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER,,
+Somalia_371421,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_60129,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_61368,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_626316,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_685158,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_7931,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER,,
+Somalia_886726,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_93023,Somalia,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_970508,Somalia,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_14484,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_321316,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_523539,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_534068,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_612594,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_713926,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_845821,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_847275,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_916628,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Sri-Lanka_92824,Sri-Lanka,WATER,1,MLLM,zero-shot,pseudo_rgb,WATER,True,WATER.,,
+Somalia_12849,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_166342,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_167787,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_195014,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_205466,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_230192,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_256539,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_322855,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_32375,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_371421,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_60129,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_61368,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_626316,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_685158,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Somalia_7931,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_886726,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_93023,Somalia,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Somalia_970508,Somalia,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_135713,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_14484,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_152185,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_178753,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_236030,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_249079,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_31559,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_321316,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_400518,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_52223,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_523539,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_534068,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_612594,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_713926,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_748447,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_845821,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_847275,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_849649,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_85652,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,NON_WATER,True,NON_WATER,,
+Sri-Lanka_916628,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_922192,Sri-Lanka,NON_WATER,0,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,
+Sri-Lanka_92824,Sri-Lanka,WATER,1,MLLM,fine-tuned,pseudo_rgb,WATER,True,WATER,,

@@ -1,0 +1,15 @@
+epoch=1/25 phase=head-only train_loss=0.502236 validation_loss=0.387740 balanced_accuracy=0.900000 best=1 seconds=8.30
+epoch=2/25 phase=head-only train_loss=0.294414 validation_loss=0.364566 balanced_accuracy=0.875000 best=1 seconds=8.99
+epoch=3/25 phase=head-only train_loss=0.254959 validation_loss=0.414945 balanced_accuracy=0.825000 best=1 seconds=8.93
+epoch=4/25 phase=layer4+fc train_loss=0.397565 validation_loss=0.471803 balanced_accuracy=0.800000 best=1 seconds=12.13
+epoch=5/25 phase=layer4+fc train_loss=0.195165 validation_loss=0.341926 balanced_accuracy=0.825000 best=1 seconds=12.03
+epoch=6/25 phase=layer4+fc train_loss=0.067747 validation_loss=0.437519 balanced_accuracy=0.900000 best=1 seconds=12.40
+epoch=7/25 phase=layer4+fc train_loss=0.058187 validation_loss=0.456566 balanced_accuracy=0.925000 best=7 seconds=12.85
+epoch=8/25 phase=layer4+fc train_loss=0.168002 validation_loss=0.401841 balanced_accuracy=0.825000 best=7 seconds=12.30
+epoch=9/25 phase=layer4+fc train_loss=0.066964 validation_loss=0.459653 balanced_accuracy=0.825000 best=7 seconds=14.35
+epoch=10/25 phase=layer4+fc train_loss=0.015956 validation_loss=0.638690 balanced_accuracy=0.850000 best=7 seconds=13.14
+epoch=11/25 phase=layer4+fc train_loss=0.006174 validation_loss=0.643913 balanced_accuracy=0.800000 best=7 seconds=13.14
+epoch=12/25 phase=layer4+fc train_loss=0.004548 validation_loss=1.399047 balanced_accuracy=0.725000 best=7 seconds=13.70
+Checkpoint: /home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/models/resnet18_pseudo_rgb/best_checkpoint.pt
+Melhor epoca: 7; balanced_accuracy validation=0.925000
+Teste nao avaliado. Use 13_evaluate_resnet18.py para inferencia.

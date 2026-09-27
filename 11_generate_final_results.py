@@ -34,6 +34,10 @@ from evaluation.metrics import (
     validate_prediction_sets,
 )
 from mllm.prompts import CLASSIFICATION_PROMPT
+from evaluation.comparison import (
+    CNN_MODEL, DISPLAY_NAMES, MAIN_REPRESENTATION, display_name,
+    main_model_names, training_regimes, validate_cnn_artifacts,
+)
 
 
 REPRESENTATIONS = ("vv", "vh", "pseudo_rgb")
@@ -81,6 +85,12 @@ MAIN_TABLE_FIELDS = [
     "Recall",
     "F1",
     "Invalid Predictions",
+    "Invalid Prediction Rate",
+    "ROC-AUC",
+    "F1 CI Low",
+    "F1 CI High",
+    "Balanced Accuracy CI Low",
+    "Balanced Accuracy CI High",
 ]
 ABLATION_TABLE_FIELDS = [
     "Representation",
@@ -146,12 +156,22 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--test", type=Path, default=Path("data/splits/test.csv"))
     parser.add_argument("--results-dir", type=Path, default=Path("results"))
     parser.add_argument("--models-dir", type=Path, default=Path("models"))
+    parser.add_argument("--include-cnn", action="store_true")
+    parser.add_argument("--cnn-results", type=Path)
+    parser.add_argument("--cnn-config", type=Path)
     parser.add_argument(
-        "--output-dir", type=Path, default=Path("results/final")
+        "--output-dir", type=Path,
+        help="Padrao final_with_resnet18 com CNN; final no modo antigo"
     )
     parser.add_argument("--bootstrap-samples", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args(argv)
+    args.output_dir = args.output_dir or args.results_dir / (
+        "final_with_resnet18" if args.include_cnn else "final")
+    args.cnn_results = args.cnn_results or args.results_dir / "resnet18_pseudo_rgb"
+    args.cnn_config = args.cnn_config or args.models_dir / "resnet18_pseudo_rgb/training_config.json"
+    if args.include_cnn and args.output_dir.resolve() == (args.results_dir / "final").resolve():
+        parser.error("use outra saida para preservar results/final")
     for name in ("train", "validation", "test"):
         if not getattr(args, name).is_file():
             parser.error(f"--{name}: arquivo inexistente: {getattr(args, name)}")
@@ -253,15 +273,50 @@ def _package_versions() -> dict[str, str | None]:
     return result
 
 
-def _load_main_strict(path: Path) -> list[dict[str, str]]:
+def _load_main_strict(path: Path, include_cnn: bool = False) -> list[dict[str, str]]:
     rows = _read_csv(path)
-    required_models = {"Random Forest", "MLLM Zero-Shot", "MLLM Fine-Tuned"}
+    ordered_models = main_model_names(include_cnn)
+    required_models = set(ordered_models)
     strict = [row for row in rows if row.get("evaluation_view") == "strict"]
     if {row.get("model") for row in strict} != required_models:
-        raise FinalResultsError("model_comparison.csv nao contem os tres modelos")
-    if len(strict) != 3:
+        raise FinalResultsError(f"model_comparison.csv deve conter {ordered_models}")
+    if len(strict) != len(required_models):
         raise FinalResultsError("model_comparison.csv possui linhas strict duplicadas")
-    return strict
+    expected = {(model, view) for model in ordered_models for view in ("strict", "valid-only")}
+    if len(rows) != len(expected) or {(r["model"], r["evaluation_view"]) for r in rows} != expected:
+        raise FinalResultsError("model_comparison.csv possui visoes ausentes/duplicadas")
+    for row in strict:
+        representation = "vv_vh_features" if row["model"] == "Random Forest" else MAIN_REPRESENTATION
+        if row["representation"] != representation:
+            raise FinalResultsError("representacao principal deve ser fixada em pseudo_rgb")
+    indexed = {row["model"]: row for row in strict}
+    return [indexed[model] for model in ordered_models]
+
+
+def _validate_main_metrics(path: Path, prediction_sets: dict[str, list[Prediction]],
+                           ablation_metrics: dict, bootstrap_samples: int, seed: int) -> None:
+    """Evita consolidar uma tabela desatualizada ou calculada com outra configuracao."""
+    indexed = {(row["model"], row["evaluation_view"]): row for row in _read_csv(path)}
+    for model, predictions in prediction_sets.items():
+        for view in ("valid-only", "strict"):
+            if model in ("MLLM Zero-Shot", "MLLM Fine-Tuned"):
+                training = "zero-shot" if model == "MLLM Zero-Shot" else "fine-tuned"
+                expected = ablation_metrics[(training, MAIN_REPRESENTATION, view)]
+            else:
+                expected = calculate_metrics(predictions, view,
+                                             bootstrap_samples=bootstrap_samples, seed=seed).to_dict()
+            actual = indexed[(model, view)]
+            for key, value in expected.items():
+                if key in ("model", "training", "representation"):
+                    continue
+                if isinstance(value, (float, int)):
+                    candidate = float(actual[key])
+                    matches = (math.isnan(float(value)) and math.isnan(candidate)) or math.isclose(
+                        candidate, float(value), rel_tol=0.0, abs_tol=1e-12)
+                else:
+                    matches = actual[key] == value
+                if not matches:
+                    raise FinalResultsError(f"metrica principal divergente: {model}/{view}/{key}")
 
 
 def _validate_splits(args: argparse.Namespace) -> dict[str, list[object]]:
@@ -440,16 +495,16 @@ def _gain_rows(
 
 def _save_confusion_matrices(
     output_dir: Path,
-    rf_predictions: Sequence[Prediction],
+    base_predictions: dict[str, list[Prediction]],
     ablation: dict[tuple[str, str], list[Prediction]],
 ) -> None:
-    specifications = [
-        ("Random Forest", "random_forest.png", rf_predictions),
-    ]
+    filenames = {"Random Forest": "random_forest.png", CNN_MODEL: "resnet18_pseudo_rgb.png"}
+    specifications = [(display_name(model), filenames[model], predictions)
+                      for model, predictions in base_predictions.items()]
     for training, representation in ablation:
         specifications.append(
             (
-                f"MLLM {training} - {representation}",
+                f"{'MLLM + LoRA' if training == 'fine-tuned' else 'MLLM zero-shot'} - {representation}",
                 f"mllm_{training.replace('-', '_')}_{representation}.png",
                 ablation[(training, representation)],
             )
@@ -469,38 +524,46 @@ def _save_confusion_matrices(
 
 
 def _main_metrics_figure(main_rows: Sequence[dict[str, str]], path: Path) -> None:
-    metrics = ("balanced_accuracy", "precision", "recall", "f1")
-    labels = ("Balanced accuracy", "Precision", "Recall", "F1")
-    models = [row["model"] for row in main_rows]
+    metrics = ("accuracy", "balanced_accuracy", "precision", "recall", "f1")
+    labels = ("Accuracy", "Balanced accuracy", "Precision", "Recall", "F1")
+    models = [display_name(row["model"]) for row in main_rows]
     x = np.arange(len(metrics))
-    width = 0.24
-    figure, axis = plt.subplots(figsize=(9.0, 5.2))
+    width = 0.8 / len(main_rows)
+    figure, axis = plt.subplots(figsize=(max(9.0, 2.4 * len(main_rows)), 5.2))
     for index, row in enumerate(main_rows):
         axis.bar(
-            x + (index - 1) * width,
+            x + (index - (len(main_rows) - 1) / 2) * width,
             [float(row[name]) for name in metrics],
             width,
             label=models[index],
+            color=plt.get_cmap("tab10")(index),
         )
     axis.set_xticks(x, labels)
     axis.set_ylim(0.0, 1.0)
     axis.set_ylabel("Score")
     axis.set_title("Test metrics by model (strict)")
-    axis.legend()
+    axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12),
+                ncol=min(2, len(main_rows)), frameon=False)
     axis.grid(axis="y", alpha=0.25)
     figure.tight_layout()
     _save_figure(figure, path)
 
 
 def _model_f1_figure(main_rows: Sequence[dict[str, str]], path: Path) -> None:
-    figure, axis = plt.subplots(figsize=(7.0, 4.8))
-    names = [row["model"] for row in main_rows]
+    figure, axis = plt.subplots(figsize=(max(7.0, 2.4 * len(main_rows)), 4.8))
+    names = [display_name(row["model"]) for row in main_rows]
     values = [float(row["f1"]) for row in main_rows]
-    bars = axis.bar(names, values, color=["#4c78a8", "#f58518", "#54a24b"])
-    axis.bar_label(bars, fmt="%.3f", padding=3)
-    axis.set_ylim(0.0, 1.0)
+    bars = axis.bar(names, values, color=[plt.get_cmap("tab10")(i) for i in range(len(names))])
+    for index, row in enumerate(main_rows):
+        low, high = float(row["f1_ci_low"]), float(row["f1_ci_high"])
+        if math.isfinite(low) and math.isfinite(high):
+            axis.vlines(index, low, high, color="black", linewidth=1.4)
+            axis.plot([index, index], [low, high], linestyle="none", marker="_", color="black")
+        axis.text(index, values[index] + 0.015, f"{values[index]:.3f}", ha="center",
+                  bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.85})
+    axis.set_ylim(0.0, 1.05)
     axis.set_ylabel("F1")
-    axis.set_title("Test F1 comparison (strict)")
+    axis.set_title("Test F1 comparison (strict)\n95% bootstrap intervals by image")
     axis.grid(axis="y", alpha=0.25)
     figure.tight_layout()
     _save_figure(figure, path)
@@ -515,7 +578,7 @@ def _representation_figure(
     fine = [float(metrics[("fine-tuned", rep, "strict")]["f1"]) for rep in REPRESENTATIONS]
     figure, axis = plt.subplots(figsize=(7.5, 4.8))
     bars_zero = axis.bar(x - width / 2, zero, width, label="Zero-shot")
-    bars_fine = axis.bar(x + width / 2, fine, width, label="Fine-tuned")
+    bars_fine = axis.bar(x + width / 2, fine, width, label="MLLM + LoRA")
     axis.bar_label(bars_zero, fmt="%.3f", padding=3)
     axis.bar_label(bars_fine, fmt="%.3f", padding=3)
     axis.set_xticks(x, [rep.upper() if rep != "pseudo_rgb" else "pseudo-RGB" for rep in REPRESENTATIONS])
@@ -542,20 +605,27 @@ def _gain_figure(gain_rows: Sequence[dict[str, object]], path: Path) -> None:
     bars = axis.bar(labels, values, color=colors)
     axis.bar_label(bars, fmt="%+.3f", padding=3)
     axis.axhline(0.0, color="black", linewidth=0.8)
-    axis.set_ylabel("Fine-tuned F1 - zero-shot F1")
-    axis.set_title("Fine-tuning gain by SAR representation (strict)")
+    axis.set_ylabel("MLLM + LoRA F1 - zero-shot F1")
+    axis.set_title("LoRA gain by SAR representation (strict)")
     axis.grid(axis="y", alpha=0.25)
     figure.tight_layout()
     _save_figure(figure, path)
 
 
 def _consolidated_rows(
-    rf_predictions: Sequence[Prediction],
+    base_predictions: dict[str, list[Prediction]],
     ablation: dict[tuple[str, str], list[Prediction]],
 ) -> list[dict[str, object]]:
-    all_predictions = list(rf_predictions)
+    all_predictions = [row for predictions in base_predictions.values() for row in predictions]
     for predictions in ablation.values():
         all_predictions.extend(predictions)
+    seen = set()
+    for row in all_predictions:
+        family = "MLLM" if row.model.startswith("MLLM") else row.model
+        key = (family, row.training, row.representation, row.image_id)
+        if key in seen:
+            raise FinalResultsError(f"condicao/amostra duplicada na consolidacao: {key}")
+        seen.add(key)
     return [
         {
             **row.__dict__,
@@ -579,7 +649,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         splits = _validate_splits(args)
         configs = _validate_training_inputs(args, splits)
         output_dir = args.output_dir.resolve()
-        main_rows = _load_main_strict(output_dir / "model_comparison.csv")
+        main_rows = _load_main_strict(output_dir / "model_comparison.csv", args.include_cnn)
+        comparison_validation = _read_json(output_dir / "comparison_validation.json")
+        if (comparison_validation.get("seed", args.seed) != args.seed
+                or comparison_validation.get("bootstrap_samples", args.bootstrap_samples)
+                != args.bootstrap_samples):
+            raise FinalResultsError("comparacao e consolidacao usam seed/bootstrap diferentes")
         ablation = _load_ablation_predictions(args, splits["test"])
         metric_rows, metric_index = _metric_rows(
             ablation, args.bootstrap_samples, args.seed
@@ -593,13 +668,45 @@ def main(argv: Sequence[str] | None = None) -> int:
             training="supervised",
             representation="vv_vh_features",
         )
-        validate_prediction_sets([rf_predictions, *ablation.values()])
+        base_predictions = {"Random Forest": rf_predictions}
+        cnn_config = None
+        if args.include_cnn:
+            cnn_config, cnn_validation = validate_cnn_artifacts(
+                args.cnn_config, args.cnn_results,
+                {name: getattr(args, name) for name in splits})
+            if (cnn_config["training_samples"] != len(splits["train"])
+                    or cnn_config["validation_samples"] != len(splits["validation"])):
+                raise FinalResultsError("CNN: contagens dos splits divergentes")
+            comparison_validation.update(cnn_validation)
+            base_predictions[CNN_MODEL] = load_predictions(
+                args.cnn_results / "test_predictions.csv", splits["test"],
+                model=CNN_MODEL, training="supervised-transfer-learning",
+                representation=MAIN_REPRESENTATION)
+        main_predictions = dict(base_predictions)
+        for model, training, directory in (
+            ("MLLM Zero-Shot", "zero-shot", "mllm_zero_shot"),
+            ("MLLM Fine-Tuned", "fine-tuned", "mllm_finetuned"),
+        ):
+            predictions = load_predictions(
+                args.results_dir / directory / "test_predictions.csv", splits["test"],
+                model=model, training=training, representation=MAIN_REPRESENTATION)
+            # A condicao pseudo_rgb da ablation e a mesma da comparacao principal.
+            # O nome interno "MLLM" da ablation e preservado no CSV consolidado.
+            for main_prediction, ablation_prediction in zip(
+                    predictions, ablation[(training, MAIN_REPRESENTATION)], strict=True):
+                candidate = {**main_prediction.__dict__, "model": "MLLM"}
+                if candidate != ablation_prediction.__dict__:
+                    raise FinalResultsError(f"predicoes principais/ablation divergentes: {model}")
+            main_predictions[model] = predictions
+        validate_prediction_sets([*main_predictions.values(), *ablation.values()])
+        _validate_main_metrics(output_dir / "model_comparison.csv", main_predictions,
+                               metric_index, args.bootstrap_samples, args.seed)
 
         _atomic_csv(output_dir / "ablation_results.csv", ABLATION_FIELDS, metric_rows)
         _atomic_csv(output_dir / "finetuning_gain.csv", GAIN_FIELDS, gain_rows)
         table_main = [
             {
-                "Model": row["model"],
+                "Model": display_name(row["model"]),
                 "SAR Representation": row["representation"],
                 "Accuracy": row["accuracy"],
                 "Balanced Accuracy": row["balanced_accuracy"],
@@ -607,6 +714,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "Recall": row["recall"],
                 "F1": row["f1"],
                 "Invalid Predictions": row["invalid_predictions"],
+                "Invalid Prediction Rate": row["invalid_prediction_rate"],
+                "ROC-AUC": row["roc_auc"],
+                "F1 CI Low": row["f1_ci_low"],
+                "F1 CI High": row["f1_ci_high"],
+                "Balanced Accuracy CI Low": row["balanced_accuracy_ci_low"],
+                "Balanced Accuracy CI High": row["balanced_accuracy_ci_high"],
             }
             for row in main_rows
         ]
@@ -632,8 +745,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             ABLATION_TABLE_FIELDS,
             table_ablation,
         )
-        consolidated = _consolidated_rows(rf_predictions, ablation)
-        expected_consolidated = len(splits["test"]) * (1 + len(ablation))
+        consolidated = _consolidated_rows(base_predictions, ablation)
+        condition_count = len(base_predictions) + len(ablation)
+        expected_consolidated = len(splits["test"]) * condition_count
         if len(consolidated) != expected_consolidated:
             raise FinalResultsError("contagem incorreta de predicoes consolidadas")
         _atomic_csv(
@@ -642,7 +756,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             consolidated,
         )
 
-        _save_confusion_matrices(output_dir, rf_predictions, ablation)
+        _save_confusion_matrices(output_dir, base_predictions, ablation)
         figures_dir = output_dir / "figures"
         _model_f1_figure(main_rows, figures_dir / "model_f1_comparison.png")
         _representation_figure(
@@ -662,6 +776,24 @@ def main(argv: Sequence[str] | None = None) -> int:
         ablation_manifest = _read_json(
             args.results_dir.resolve() / "ablation/run_manifest.json"
         )
+        split_hashes = {name: _sha256(getattr(args, name)) for name in splits}
+        if (ablation_manifest.get("status") != "complete"
+                or ablation_manifest.get("split_sha256") != split_hashes
+                or not ablation_manifest.get("only_representation_changes")):
+            raise FinalResultsError("manifesto da ablation incompleto ou splits divergentes")
+        regimes = training_regimes(rf_metadata, configs["pseudo_rgb"], cnn_config,
+                                   len(splits["train"]))
+        regime_rows = [{
+            "Model": display_name(model), "Pretraining": regime["pretraining"],
+            "Total Parameters": regime["total_parameters"],
+            "Trainable Parameters": regime["trainable_parameters"],
+            "Training Samples": regime["training_samples"], "Epochs": regime["epochs"],
+            "Batch Size": regime["batch_size"],
+            "Gradient Accumulation": regime["gradient_accumulation_steps"],
+            "Training Seconds": regime["training_seconds"],
+            "Selection": regime["selection"], "Budget Notes": regime["budget_notes"],
+        } for model, regime in regimes.items()]
+        _atomic_csv(output_dir / "table_training_regimes.csv", list(regime_rows[0]), regime_rows)
         best_representation = max(
             REPRESENTATIONS,
             key=lambda rep: (
@@ -684,12 +816,29 @@ def main(argv: Sequence[str] | None = None) -> int:
                 {row.event for row in splits["validation"]}
             ),
             "test_events": sorted({row.event for row in splits["test"]}),
-            "models": ["Random Forest", "MLLM Zero-Shot", "MLLM Fine-Tuned"],
+            "models": list(main_model_names(args.include_cnn)),
+            "model_display_names": {model: DISPLAY_NAMES[model] for model in regimes},
+            "main_representation": MAIN_REPRESENTATION,
+            "main_representation_selection": "fixed independently of test results",
+            "positive_class": "WATER",
             "representations": list(REPRESENTATIONS),
             "best_finetuned_representation_by_test_f1": best_representation,
+            "best_finetuned_representation_is_exploratory": True,
+            "best_finetuned_representation_notes":
+                "post hoc descriptive statistic; never used to select the main models/representation",
+            "training_regimes": regimes,
+            "training_regime_notes":
+                "different pretraining, adaptation and compute budgets; not equivalent regimes; "
+                "null denotes a quantity not applicable or not recorded",
             "random_seed": args.seed,
             "bootstrap_samples": args.bootstrap_samples,
             "confidence_interval": "95% percentile bootstrap on test samples",
+            "statistical_limitations": {
+                "test_events": len({row.event for row in splits["test"]}),
+                "bootstrap_unit": "image (not geographic event)",
+                "interpretation": "point differences and per-model image intervals alone "
+                                  "do not demonstrate statistical superiority",
+            },
             "evaluation_views": {
                 "valid-only": "metrics only on parseable predictions",
                 "strict": "invalid predictions count as classification errors",
@@ -698,17 +847,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             "mllm_base_model": configs["pseudo_rgb"]["base_model"],
             "mllm_revision": configs["pseudo_rgb"].get("requested_revision"),
             "lora_configuration_by_representation": configs,
+            "cnn_configuration": cnn_config,
             "prompt_sha256": hashlib.sha256(
                 CLASSIFICATION_PROMPT.encode("utf-8")
             ).hexdigest(),
             "software_versions": _package_versions(),
             "hardware": mllm_environment.get("hardware"),
             "experiment_timestamp_utc": datetime.now(timezone.utc).isoformat(),
-            "split_sha256": {
-                "train": _sha256(args.train),
-                "validation": _sha256(args.validation),
-                "test": _sha256(args.test),
-            },
+            "split_sha256": split_hashes,
             "ablation_execution": ablation_manifest,
             "scientific_validations": {
                 "same_test_ids_all_conditions": True,
@@ -719,18 +865,65 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "forbidden_mllm_inputs": [],
                 "only_sar_representation_changes_in_ablation": True,
                 "prediction_rows": len(consolidated),
+                "consolidated_conditions": condition_count,
+                "no_duplicate_condition_sample_rows": True,
+                "main_mllm_matches_existing_ablation": True,
+                "cnn_ablation_executed": False,
             },
             "platform": platform.platform(),
         }
         _atomic_json(output_dir / "experiment_manifest.json", manifest)
+        comparison_validation.update({
+            "main_models": list(main_model_names(args.include_cnn)),
+            "main_representation": MAIN_REPRESENTATION,
+            "main_metrics_match_source_predictions": True,
+            "main_mllm_matches_existing_ablation": True,
+            "test_ids_equal_across_all_conditions": True,
+            "true_labels_equal_across_all_conditions": True,
+            "consolidated_conditions": condition_count,
+            "consolidated_prediction_rows": len(consolidated),
+            "no_duplicate_condition_sample_rows": True,
+            "cnn_ablation_executed": False,
+        })
+        _atomic_json(output_dir / "comparison_validation.json", comparison_validation)
+        notes = (
+            "# Comparacao final\n\n"
+            f"Modelos: {', '.join(display_name(model) for model in regimes)}.\n\n"
+            "A representacao principal e fixada em `pseudo_rgb` para os modelos de imagem; "
+            "RF usa `vv_vh_features`. Classe positiva: `WATER`. A tabela principal usa "
+            "a visao `strict`; `model_comparison.csv` preserva tambem `valid-only`. "
+            "`MLLM Fine-Tuned` e `Fine-Tuned` nas tabelas de ablation significam **MLLM + LoRA**. "
+            "Os nomes internos anteriores permanecem nos CSVs de avaliacao.\n\n"
+            "ROC-AUC dos MLLMs e indisponivel (`NaN`), pois suas respostas nao incluem "
+            "probabilidades legitimas. Nenhuma probabilidade foi inferida de rotulos textuais.\n\n"
+            f"O teste contem {len(splits['test'])} imagens de "
+            f"{len({row.event for row in splits['test']})} eventos geograficos "
+            f"({', '.join(sorted({row.event for row in splits['test']}))}). "
+            "Os ICs de 95% sao bootstrap por imagem; nao representam incerteza entre eventos. "
+            "Diferencas pontuais e esses ICs, isoladamente, nao demonstram superioridade "
+            "estatistica entre modelos.\n\n"
+            "`table_training_regimes.csv` e o manifesto documentam pre-treinamento, parametros "
+            "e orcamentos diferentes. Campos vazios/nulos significam nao aplicavel ou nao "
+            "registrado. Nao se assume igualdade de dados externos, tempo ou adaptacao. "
+            "O total de parametros do MLLM com LoRA inclui os adapters; o total exato do "
+            "zero-shot nao foi registrado separadamente.\n\n"
+            f"O consolidado tem {condition_count} condicoes e {len(consolidated)} linhas. "
+            "A ablation dos MLLMs em VV/VH/pseudo-RGB e reutilizada; suas condicoes pseudo-RGB "
+            "nao sao duplicadas. Nenhum modelo foi retreinado e nenhuma ablation da CNN "
+            "foi executada.\n\n"
+            "`best_finetuned_representation_by_test_f1` e apenas descricao exploratoria "
+            "posterior ao teste, sem efeito sobre a comparacao principal.\n"
+        )
+        (output_dir / "README.md").write_text(notes, encoding="utf-8")
     except Exception as exc:
         print(f"[ERRO FATAL] {exc}", file=sys.stderr)
         return 1
 
     print("\nResultados finais gerados")
-    print(f"Condicoes consolidadas: {1 + len(ablation)}")
+    print(f"Modelos principais: {len(main_rows)}")
+    print(f"Condicoes consolidadas: {condition_count}")
     print(f"Predicoes consolidadas: {len(consolidated)}")
-    print(f"Melhor representacao fine-tuned por F1: {best_representation}")
+    print(f"Descricao exploratoria posterior: maior F1 LoRA por representacao = {best_representation}")
     print(f"Saida: {output_dir}")
     return 0
 

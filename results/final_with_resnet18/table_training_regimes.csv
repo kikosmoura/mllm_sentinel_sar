@@ -1,0 +1,5 @@
+Model,Pretraining,Total Parameters,Trainable Parameters,Training Samples,Epochs,Batch Size,Gradient Accumulation,Training Seconds,Selection,Budget Notes
+Random Forest,none,,,188,,,,,fixed hyperparameters,tree ensemble; neural parameter counts and epochs not applicable; training duration not recorded
+CNN (ResNet-18),ImageNet-1K; ResNet18_Weights.IMAGENET1K_V1,11177538,8394754,188,12,8,1,142.38800580101088,"validation balanced_accuracy descending, then loss ascending","3 warmup epochs; then layer4+fc; max 25 epochs, patience 5; BatchNorm statistics frozen"
+MLLM zero-shot,external pretrained multimodal model: HuggingFaceTB/SmolVLM-256M-Instruct,,0,0,0,,,0,fixed prompt and pseudo_rgb,no local task training; exact zero-shot parameter count not separately recorded; LoRA total includes adapters
+MLLM + LoRA,external pretrained multimodal model: HuggingFaceTB/SmolVLM-256M-Instruct,259369536,2884608,188,1.0,1,8,836.5399139180081,validation loss,"LoRA r=8, alpha=16; base frozen; external pretraining budget not recorded"

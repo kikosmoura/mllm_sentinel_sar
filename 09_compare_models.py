@@ -30,6 +30,9 @@ from evaluation.metrics import (
     validate_prediction_sets,
 )
 from mllm.prompts import CLASSIFICATION_PROMPT
+from evaluation.comparison import (
+    CNN_MODEL, MAIN_REPRESENTATION, display_name, validate_cnn_artifacts,
+)
 
 
 MODEL_COMPARISON_FIELDS = [
@@ -79,6 +82,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument("--train", type=Path, default=Path("data/splits/train.csv"))
+    parser.add_argument("--validation", type=Path, default=Path("data/splits/validation.csv"))
     parser.add_argument("--test", type=Path, default=Path("data/splits/test.csv"))
     parser.add_argument(
         "--random-forest-results",
@@ -111,14 +115,28 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         default=Path("results/mllm_environment.json"),
     )
     parser.add_argument("--representation", default="pseudo_rgb")
+    parser.add_argument("--include-cnn", action="store_true",
+                        help="Inclui a ResNet-18 treinada; modo antigo permanece sem esta opcao")
+    parser.add_argument("--cnn-results", type=Path, default=Path("results/resnet18_pseudo_rgb"))
+    parser.add_argument("--cnn-config", type=Path,
+                        default=Path("models/resnet18_pseudo_rgb/training_config.json"))
     parser.add_argument(
-        "--output-dir", type=Path, default=Path("results/final")
+        "--output-dir", type=Path,
+        help="Padrao final_with_resnet18 com CNN; final no modo antigo"
     )
     parser.add_argument("--bootstrap-samples", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args(argv)
+    args.output_dir = args.output_dir or Path(
+        "results/final_with_resnet18" if args.include_cnn else "results/final")
+    if args.include_cnn:
+        if args.representation != MAIN_REPRESENTATION:
+            parser.error("comparacao principal com CNN exige pseudo_rgb")
+        if args.output_dir.resolve() == Path("results/final").resolve():
+            parser.error("use outra saida para preservar results/final")
     required_files = {
         "--train": args.train,
+        "--validation": args.validation,
         "--test": args.test,
         "Random Forest": args.random_forest_results / "test_predictions.csv",
         "MLLM zero-shot": args.zero_shot_results / "test_predictions.csv",
@@ -127,6 +145,12 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         "--finetuning-config": args.finetuning_config,
         "--mllm-environment": args.mllm_environment,
     }
+    if args.include_cnn:
+        required_files.update({
+            "--cnn-config": args.cnn_config,
+            "CNN": args.cnn_results / "test_predictions.csv",
+            "CNN evaluation": args.cnn_results / "evaluation_manifest.json",
+        })
     for label, path in required_files.items():
         if not path.is_file():
             parser.error(f"{label}: arquivo inexistente: {path}")
@@ -192,6 +216,16 @@ def _validate_no_leakage(args: argparse.Namespace) -> dict[str, object]:
         raise EvaluationError("image_id compartilhado entre treino e teste")
     if train_events & test_events:
         raise EvaluationError("evento compartilhado entre treino e teste")
+    validation_truth = load_ground_truth(args.validation, expected_split="validation")
+    splits = {"train": train, "validation": validation_truth, "test": test}
+    names = list(splits)
+    for index, left in enumerate(names):
+        for right in names[index + 1:]:
+            for key in ("image_id", "event"):
+                if {getattr(row, key).casefold() for row in splits[left]} & {
+                    getattr(row, key).casefold() for row in splits[right]
+                }:
+                    raise EvaluationError(f"{key} compartilhado em {left}/{right}")
 
     rf_metadata = _load_json(args.random_forest_metadata)
     feature_names = [str(name).casefold() for name in rf_metadata.get("feature_names", [])]
@@ -226,13 +260,23 @@ def _validate_no_leakage(args: argparse.Namespace) -> dict[str, object]:
             raise EvaluationError(f"prompt divergente na execucao {run_name}")
         if run.get("representation") != args.representation:
             raise EvaluationError(f"representacao divergente na execucao {run_name}")
-    return {
+    validation = {
         "train_test_id_overlap": 0,
         "train_test_event_overlap": 0,
         "test_samples_used_by_lora": 0,
         "prompt_sha256": prompt_hash,
         "forbidden_inputs": [],
+        "all_splits_geographically_isolated": True,
     }
+    if args.include_cnn:
+        config, cnn_validation = validate_cnn_artifacts(
+            args.cnn_config, args.cnn_results,
+            {name: getattr(args, name) for name in names})
+        if (config["training_samples"] != len(train)
+                or config["validation_samples"] != len(validation_truth)):
+            raise EvaluationError("CNN: contagem de treino/validacao divergente")
+        validation.update(cnn_validation)
+    return validation
 
 
 def _save_confusion(
@@ -268,23 +312,31 @@ def compare(args: argparse.Namespace) -> tuple[list[dict[str, object]], list[Pre
             "supervised",
             "vv_vh_features",
             args.random_forest_results / "test_predictions.csv",
+            "random_forest.png",
         ),
         (
             "MLLM Zero-Shot",
             "zero-shot",
             args.representation,
             args.zero_shot_results / "test_predictions.csv",
+            f"mllm_zero_shot_{args.representation}.png",
         ),
         (
             "MLLM Fine-Tuned",
             "fine-tuned",
             args.representation,
             args.finetuned_results / "test_predictions.csv",
+            f"mllm_fine_tuned_{args.representation}.png",
         ),
     ]
+    if args.include_cnn:
+        specifications.insert(1, (
+            CNN_MODEL, "supervised-transfer-learning", MAIN_REPRESENTATION,
+            args.cnn_results / "test_predictions.csv", "resnet18_pseudo_rgb.png",
+        ))
     prediction_sets: list[list[Prediction]] = []
     comparison_rows: list[dict[str, object]] = []
-    for model, training, representation, path in specifications:
+    for model, training, representation, path, _filename in specifications:
         predictions = load_predictions(
             path,
             truth,
@@ -338,18 +390,19 @@ def compare(args: argparse.Namespace) -> tuple[list[dict[str, object]], list[Pre
         consolidated_rows,
     )
     confusion_dir = output_dir / "confusion_matrices"
-    filenames = (
-        "random_forest.png",
-        f"mllm_zero_shot_{args.representation}.png",
-        f"mllm_fine_tuned_{args.representation}.png",
-    )
-    for predictions, specification, filename in zip(
-        prediction_sets, specifications, filenames, strict=True
+    for predictions, specification in zip(
+        prediction_sets, specifications, strict=True
     ):
-        _save_confusion(predictions, specification[0], confusion_dir / filename)
+        _save_confusion(predictions, display_name(specification[0]),
+                        confusion_dir / specification[4])
     validation["test_ids_equal_across_models"] = True
     validation["true_labels_equal_across_models"] = True
     validation["test_samples"] = len(truth)
+    validation["main_models"] = [specification[0] for specification in specifications]
+    validation["main_representation"] = args.representation
+    validation["positive_class"] = "WATER"
+    validation["bootstrap_samples"] = args.bootstrap_samples
+    validation["seed"] = args.seed
     _atomic_json(output_dir / "comparison_validation.json", validation)
     return comparison_rows, flattened
 
@@ -366,7 +419,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         if row["evaluation_view"] != "strict":
             continue
         print(
-            f"{row['model']}: accuracy={row['accuracy']:.6f}, "
+            f"{display_name(row['model'])}: accuracy={row['accuracy']:.6f}, "
             f"balanced_accuracy={row['balanced_accuracy']:.6f}, "
             f"f1={row['f1']:.6f}, invalidas={row['invalid_predictions']}"
         )

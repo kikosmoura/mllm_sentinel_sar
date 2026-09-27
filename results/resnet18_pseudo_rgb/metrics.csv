@@ -1,0 +1,5 @@
+model,split,training,representation,evaluation_view,samples,evaluated_samples,valid_predictions,invalid_predictions,invalid_prediction_rate,accuracy,balanced_accuracy,precision,recall,f1,roc_auc,f1_ci_low,f1_ci_high,balanced_accuracy_ci_low,balanced_accuracy_ci_high,metric_notes
+ResNet-18,validation,supervised-transfer-learning,pseudo_rgb,valid-only,40,40,40,0,0.0,0.925,0.925,0.9047619047619048,0.95,0.9268292682926829,0.9525,0.8331896551724137,1.0,0.8399718670076727,1.0,
+ResNet-18,validation,supervised-transfer-learning,pseudo_rgb,strict,40,40,40,0,0.0,0.925,0.925,0.9047619047619048,0.95,0.9268292682926829,0.9525,0.8331896551724137,1.0,0.8399718670076727,1.0,
+ResNet-18,test,supervised-transfer-learning,pseudo_rgb,valid-only,40,40,40,0,0.0,0.9,0.8900255754475703,0.9333333333333333,0.8235294117647058,0.8749999999999999,0.9156010230179028,0.7331818181818183,0.9743589743589743,0.7813279251918158,0.9782608695652174,
+ResNet-18,test,supervised-transfer-learning,pseudo_rgb,strict,40,40,40,0,0.0,0.9,0.8900255754475703,0.9333333333333333,0.8235294117647058,0.8749999999999999,0.9156010230179028,0.7331818181818183,0.9743589743589743,0.7813279251918158,0.9782608695652174,

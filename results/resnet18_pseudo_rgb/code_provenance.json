@@ -1,0 +1,11 @@
+{
+  "12_train_resnet18.py": "c0c3224b3b24fc0ade10799fed1f6f2237fd107639454a3b31d6667f61113583",
+  "13_evaluate_resnet18.py": "c2aeccc2a3c17ed3a2170fb6d8e9fe66b60fa9894f5fd3d4ba8a2e47c91bdd18",
+  "cnn/__init__.py": "e92f9d5bd867a1ce6ab9c9d29879297358b32f6ae8970a4422b24a5e006eb6c9",
+  "cnn/data.py": "d3697a2e26ae686a5a4663c878f34833d94593f7c4fe1e4c07fab3f1ebd9f482",
+  "cnn/inference.py": "3affda831738c8d2589ec17990268fef208cc7d39efce315b130dc5d0054ece3",
+  "cnn/model.py": "f07b558a2897cc57b64b2ca73c3f7e53cb3fcccf20cb4b49c896e72c1da6f3bb",
+  "cnn/runtime.py": "8919877a9b680802d69449d39c7cedf236e58023135ea62841dd04a95b354b6b",
+  "cnn/smoke.py": "f73a69df2a344a186d2311a8b82ec941e54a4ea34bf4586e40e0a4c19857ce3a",
+  "evaluation/metrics.py": "f5be2ad580f23478c578fe79bd7cbd1fbc369f1a476f41ef0f14f795ef2bdabd"
+}

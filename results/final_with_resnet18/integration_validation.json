@@ -1,0 +1,59 @@
+{
+  "status": "complete",
+  "main_models": [
+    "Random Forest",
+    "ResNet-18",
+    "MLLM Zero-Shot",
+    "MLLM Fine-Tuned"
+  ],
+  "main_models_count": 4,
+  "main_metric_rows": 8,
+  "consolidated_conditions": 8,
+  "consolidated_prediction_rows": 320,
+  "samples_per_condition": 40,
+  "same_ids_events_labels": true,
+  "same_csv_order_all_conditions": true,
+  "no_duplicate_condition_samples": true,
+  "old_model_metrics_unchanged": true,
+  "old_consolidated_predictions_preserved": true,
+  "old_ablation_tables_unchanged": true,
+  "legacy_mode_verified": true,
+  "legacy_verification_output": "/tmp/resnet18_legacy_comparison_validation",
+  "original_artifacts_verified": 2358,
+  "original_artifacts_changed": [],
+  "source_scripts_sha256": {
+    "09_compare_models.py": "1b18a32227d08caef23a2028beb946788c69aa269d5f3eb4fc4fd275c5da98b6",
+    "11_generate_final_results.py": "44f62569cf5f0f748dc7b2a042b8a0afcf1288d57b7e5e317e33752228028fe4",
+    "evaluation/comparison.py": "14304338bd20019de66254ff2d76bf576c3646e1c4f5fe03f3ea0fbd3372b768",
+    "evaluation/metrics.py": "f5be2ad580f23478c578fe79bd7cbd1fbc369f1a476f41ef0f14f795ef2bdabd"
+  },
+  "output_artifacts_sha256": {
+    "README.md": "25fb7d9574602ad8933af69a3d108a8ade3eff341ad8ab9d5ae4d1031e36c186",
+    "ablation_results.csv": "2e24a05d2f43c48f4526121af701e10172fd2b3480660973bbd5573d32c7e8c4",
+    "all_test_predictions.csv": "74076517c464196701b1168e42915b337aee70c47adea599b645d5d616940ecd",
+    "comparison_validation.json": "cdb3c509fd75d71ab7c620a6d5eff98afa871d665ba1332e888e19ad8779ce7e",
+    "confusion_matrices/mllm_fine_tuned_pseudo_rgb.png": "8a85f6282536545fabd5ccb0ff65b8bc02b8ad27e1ed974cbae8a87e844326e2",
+    "confusion_matrices/mllm_fine_tuned_vh.png": "768890358eaaf1572fad07d007f5f2d82046ff5c1a2d43589749de9e2a2941f1",
+    "confusion_matrices/mllm_fine_tuned_vv.png": "79b49a203c2e88b8540b317e263edf1aec283d43d73903e92686b1544e3b6bc8",
+    "confusion_matrices/mllm_zero_shot_pseudo_rgb.png": "589756a9fac4833a8884a2f3a0949c9bb407780d36c9f8148b63af9fc99b905b",
+    "confusion_matrices/mllm_zero_shot_vh.png": "1ece05110c115d86a38e7bc727d2f79618cf62c4e38610ca81dbc3fd1991f073",
+    "confusion_matrices/mllm_zero_shot_vv.png": "ff5761485d97c79478e7953b4250a76194c7088afcc374679101dc8cae81e2bc",
+    "confusion_matrices/random_forest.png": "1b6c1e14c04fd44384ac04215090bc6937d6ee9e796effa8372407c45d1d7eda",
+    "confusion_matrices/resnet18_pseudo_rgb.png": "f8c6b3d3f07237fd4e9b4131e87c416d3422cd055e029219f340ba86734052d3",
+    "experiment_manifest.json": "95e2a300a037ccb52ec85dc1f14a816cf29481e6c801a7ad5570a1c1b2cedb77",
+    "figures/finetuning_gain.png": "f6ad6a98c2b738f4bebaccf0a613ef89746777401cf28c24aa6cd86e77aab5fb",
+    "figures/model_f1_comparison.png": "85e585997cad7c16066b5f93706eae12e196b829e89edcbe4048ac1f0fd4f132",
+    "figures/model_metrics_comparison.png": "8861c0aad94c78e7f675830b6c393e1bc742f475881da4f7f61d51bd66681ba9",
+    "figures/representation_f1_comparison.png": "da8b611703e923f619fd339a8880b4c0f08947aa3bdd532533b0f8a4a9e35666",
+    "finetuning_gain.csv": "bf03b0b88eed9d73f05e8c409d424258541acb84b700c6e962f44c790de22b4d",
+    "model_comparison.csv": "5cb196222f51cf8ef2b448fe825cbbbbbfd47e769898fa53a564726fcb587c7a",
+    "table_ablation.csv": "96a903bcf84fd2b5e79a68eb7f1a92b921a529c164f65dd79fd2baaa174895ca",
+    "table_main_results.csv": "639577511ae3affe601cff73d0b4d506722e70a31f46119fcc2d31f4d047c29b",
+    "table_training_regimes.csv": "b3b312d05d06bdf06e24f8a3310326733bae502742ef52df8733fab9713e1406"
+  },
+  "commands": [
+    "venv/bin/python 09_compare_models.py --include-cnn",
+    "venv/bin/python 11_generate_final_results.py --include-cnn"
+  ],
+  "statistical_note": "40 test images, two geographic events; image bootstrap CIs alone do not demonstrate statistical superiority"
+}

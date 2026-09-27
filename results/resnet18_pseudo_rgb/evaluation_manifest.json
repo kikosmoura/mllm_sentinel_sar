@@ -1,0 +1,884 @@
+{
+  "bootstrap_samples": 1000,
+  "checkpoint": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/models/resnet18_pseudo_rgb/best_checkpoint.pt",
+  "checkpoint_sha256": "d3e2a04992c4eed19d67a1e2b7c28632f8da293f1c4dff6c652e2180f3d2add4",
+  "decision": "argmax; no threshold tuning on test",
+  "geographic_isolation": true,
+  "hardware": {
+    "cpu_count": 12,
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_devices": [],
+    "device": "cpu",
+    "platform": "Linux-6.8.0-57-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "ram_bytes": 33288433664,
+    "torch_threads": 4
+  },
+  "image_resolutions": {
+    "test": [
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_12849.png",
+        "image_id": "Somalia_12849",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_12849.png",
+        "sha256": "130849ca64d3ba620b6d48988720111432de27f72f19dc5a1e22bb3867fd4796",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_12849.png": "130849ca64d3ba620b6d48988720111432de27f72f19dc5a1e22bb3867fd4796",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_12849.png": "130849ca64d3ba620b6d48988720111432de27f72f19dc5a1e22bb3867fd4796"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_166342.png",
+        "image_id": "Somalia_166342",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_166342.png",
+        "sha256": "4f1485aa5b58729598d5362de6d85c32b054993066a4ab78e6c80b33af241e99",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_166342.png": "4f1485aa5b58729598d5362de6d85c32b054993066a4ab78e6c80b33af241e99",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_166342.png": "4f1485aa5b58729598d5362de6d85c32b054993066a4ab78e6c80b33af241e99"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_167787.png",
+        "image_id": "Somalia_167787",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_167787.png",
+        "sha256": "ad9384976b60a0d5f55173a694a39f1d6e6a663aafdc228a7c580d9edf153887",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_167787.png": "ad9384976b60a0d5f55173a694a39f1d6e6a663aafdc228a7c580d9edf153887",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_167787.png": "ad9384976b60a0d5f55173a694a39f1d6e6a663aafdc228a7c580d9edf153887"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_195014.png",
+        "image_id": "Somalia_195014",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_195014.png",
+        "sha256": "2e4d1590417eaa2a95c09a7001ac98fab8b9c62eaae1cc14f1c0874caa5c09cf",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_195014.png": "2e4d1590417eaa2a95c09a7001ac98fab8b9c62eaae1cc14f1c0874caa5c09cf",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_195014.png": "2e4d1590417eaa2a95c09a7001ac98fab8b9c62eaae1cc14f1c0874caa5c09cf"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_205466.png",
+        "image_id": "Somalia_205466",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_205466.png",
+        "sha256": "f838a2e5d0b889fa7fe4280a5505c549f74d446ede7f793c45bbfdf27976a062",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_205466.png": "f838a2e5d0b889fa7fe4280a5505c549f74d446ede7f793c45bbfdf27976a062",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_205466.png": "f838a2e5d0b889fa7fe4280a5505c549f74d446ede7f793c45bbfdf27976a062"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_230192.png",
+        "image_id": "Somalia_230192",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_230192.png",
+        "sha256": "c6ab9925bcbc207e9ded392f904d041f5095d16f171a404a2ee49a9ea6569d4f",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_230192.png": "c6ab9925bcbc207e9ded392f904d041f5095d16f171a404a2ee49a9ea6569d4f",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_230192.png": "c6ab9925bcbc207e9ded392f904d041f5095d16f171a404a2ee49a9ea6569d4f"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_256539.png",
+        "image_id": "Somalia_256539",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_256539.png",
+        "sha256": "d9c5acae099d11f78fa62b48ed0e3c4ff2c3de4c13ef9ba15ee3b377f4cca67e",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_256539.png": "d9c5acae099d11f78fa62b48ed0e3c4ff2c3de4c13ef9ba15ee3b377f4cca67e",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_256539.png": "d9c5acae099d11f78fa62b48ed0e3c4ff2c3de4c13ef9ba15ee3b377f4cca67e"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_322855.png",
+        "image_id": "Somalia_322855",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_322855.png",
+        "sha256": "ca4ccec4530953d5986a21d5c38001c059664ec2c52861ed3fbd6119aafc7b73",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_322855.png": "ca4ccec4530953d5986a21d5c38001c059664ec2c52861ed3fbd6119aafc7b73",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_322855.png": "ca4ccec4530953d5986a21d5c38001c059664ec2c52861ed3fbd6119aafc7b73"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_32375.png",
+        "image_id": "Somalia_32375",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_32375.png",
+        "sha256": "36b4580e11ba4406037107cf8bff2309be0bf8d9c10646573bea8672492dafed",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_32375.png": "36b4580e11ba4406037107cf8bff2309be0bf8d9c10646573bea8672492dafed",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_32375.png": "36b4580e11ba4406037107cf8bff2309be0bf8d9c10646573bea8672492dafed"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_371421.png",
+        "image_id": "Somalia_371421",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_371421.png",
+        "sha256": "61aa5c01d8424a04a6f34deefcb99adbbf5b218d0b0f7d09e82a2b7cb2ef131c",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_371421.png": "61aa5c01d8424a04a6f34deefcb99adbbf5b218d0b0f7d09e82a2b7cb2ef131c",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_371421.png": "61aa5c01d8424a04a6f34deefcb99adbbf5b218d0b0f7d09e82a2b7cb2ef131c"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_60129.png",
+        "image_id": "Somalia_60129",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_60129.png",
+        "sha256": "656fce04e45f39fabe9680962cf91fdc6e7d4ea9f805103c95edee3490c7d616",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_60129.png": "656fce04e45f39fabe9680962cf91fdc6e7d4ea9f805103c95edee3490c7d616",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_60129.png": "656fce04e45f39fabe9680962cf91fdc6e7d4ea9f805103c95edee3490c7d616"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_61368.png",
+        "image_id": "Somalia_61368",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_61368.png",
+        "sha256": "c14058aa12015f814eafaa34bd6e773c5c770ef06eb0f70a787beda559688976",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_61368.png": "c14058aa12015f814eafaa34bd6e773c5c770ef06eb0f70a787beda559688976",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_61368.png": "c14058aa12015f814eafaa34bd6e773c5c770ef06eb0f70a787beda559688976"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_626316.png",
+        "image_id": "Somalia_626316",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_626316.png",
+        "sha256": "da6f016593f4e6c3b3844ad0212f8a2480f12a0a2764d19304857d8e9dd9cd3c",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_626316.png": "da6f016593f4e6c3b3844ad0212f8a2480f12a0a2764d19304857d8e9dd9cd3c",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_626316.png": "da6f016593f4e6c3b3844ad0212f8a2480f12a0a2764d19304857d8e9dd9cd3c"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_685158.png",
+        "image_id": "Somalia_685158",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_685158.png",
+        "sha256": "001f3f49ee810007a1a6e05d5f29e37d8c81ae0f48e6e86773180654656f0a54",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_685158.png": "001f3f49ee810007a1a6e05d5f29e37d8c81ae0f48e6e86773180654656f0a54",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_685158.png": "001f3f49ee810007a1a6e05d5f29e37d8c81ae0f48e6e86773180654656f0a54"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_7931.png",
+        "image_id": "Somalia_7931",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_7931.png",
+        "sha256": "e3d9005fcbc81483f5483112083f52baa06f4f360642a978344cd1a0b9a959de",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_7931.png": "e3d9005fcbc81483f5483112083f52baa06f4f360642a978344cd1a0b9a959de",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_7931.png": "e3d9005fcbc81483f5483112083f52baa06f4f360642a978344cd1a0b9a959de"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_886726.png",
+        "image_id": "Somalia_886726",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_886726.png",
+        "sha256": "476a0d8be74b3532e73fee3b1f953659654095e310b00ac28441726934b697b6",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_886726.png": "476a0d8be74b3532e73fee3b1f953659654095e310b00ac28441726934b697b6",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_886726.png": "476a0d8be74b3532e73fee3b1f953659654095e310b00ac28441726934b697b6"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_93023.png",
+        "image_id": "Somalia_93023",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_93023.png",
+        "sha256": "8248e4a3ca7534f9b7ee69226c101fe507b8dc1446392641434914a30dd58edb",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_93023.png": "8248e4a3ca7534f9b7ee69226c101fe507b8dc1446392641434914a30dd58edb",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_93023.png": "8248e4a3ca7534f9b7ee69226c101fe507b8dc1446392641434914a30dd58edb"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_970508.png",
+        "image_id": "Somalia_970508",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_970508.png",
+        "sha256": "dc196b67da66d335553799f6293e2c0a192feca595613d62468e513da98bf4ce",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Somalia_970508.png": "dc196b67da66d335553799f6293e2c0a192feca595613d62468e513da98bf4ce",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Somalia_970508.png": "dc196b67da66d335553799f6293e2c0a192feca595613d62468e513da98bf4ce"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_135713.png",
+        "image_id": "Sri-Lanka_135713",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_135713.png",
+        "sha256": "5b3d258b353ecef68b828d805d8a8f14b7baf16fc20ad46f91e9568c08429693",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_135713.png": "5b3d258b353ecef68b828d805d8a8f14b7baf16fc20ad46f91e9568c08429693",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_135713.png": "5b3d258b353ecef68b828d805d8a8f14b7baf16fc20ad46f91e9568c08429693"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_14484.png",
+        "image_id": "Sri-Lanka_14484",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_14484.png",
+        "sha256": "f33ccb4ecfd3b49774d92cfbb01923806641897e02c07d50da0866e37ff7e048",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_14484.png": "f33ccb4ecfd3b49774d92cfbb01923806641897e02c07d50da0866e37ff7e048",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_14484.png": "f33ccb4ecfd3b49774d92cfbb01923806641897e02c07d50da0866e37ff7e048"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_152185.png",
+        "image_id": "Sri-Lanka_152185",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_152185.png",
+        "sha256": "278955802e6ae49cffbbfd1e65c30d236e1e699584c501f40f7b0faf806fae31",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_152185.png": "278955802e6ae49cffbbfd1e65c30d236e1e699584c501f40f7b0faf806fae31",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_152185.png": "278955802e6ae49cffbbfd1e65c30d236e1e699584c501f40f7b0faf806fae31"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_178753.png",
+        "image_id": "Sri-Lanka_178753",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_178753.png",
+        "sha256": "0209f7321fa4be7b053a74c00d72cb7096ebb627c3ccbc12af0966e795bb7417",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_178753.png": "0209f7321fa4be7b053a74c00d72cb7096ebb627c3ccbc12af0966e795bb7417",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_178753.png": "0209f7321fa4be7b053a74c00d72cb7096ebb627c3ccbc12af0966e795bb7417"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_236030.png",
+        "image_id": "Sri-Lanka_236030",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_236030.png",
+        "sha256": "b9286ea77f905539d5513a8ad6a6228190fdf3f165bd5c8b41fccd3e45d5937a",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_236030.png": "b9286ea77f905539d5513a8ad6a6228190fdf3f165bd5c8b41fccd3e45d5937a",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_236030.png": "b9286ea77f905539d5513a8ad6a6228190fdf3f165bd5c8b41fccd3e45d5937a"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_249079.png",
+        "image_id": "Sri-Lanka_249079",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_249079.png",
+        "sha256": "ad1a5abf531fd5b6bbdc9022d3b98903a4dd4d7faf69e34efce672c423a8b72f",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_249079.png": "ad1a5abf531fd5b6bbdc9022d3b98903a4dd4d7faf69e34efce672c423a8b72f",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_249079.png": "ad1a5abf531fd5b6bbdc9022d3b98903a4dd4d7faf69e34efce672c423a8b72f"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_31559.png",
+        "image_id": "Sri-Lanka_31559",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_31559.png",
+        "sha256": "b9b014cc6638bfca01a335318826d6177bc2395649b84ecfabd0d9e32712c9bd",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_31559.png": "b9b014cc6638bfca01a335318826d6177bc2395649b84ecfabd0d9e32712c9bd",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_31559.png": "b9b014cc6638bfca01a335318826d6177bc2395649b84ecfabd0d9e32712c9bd"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_321316.png",
+        "image_id": "Sri-Lanka_321316",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_321316.png",
+        "sha256": "eac0659d4fd523b1ed20b6612632201918955c700056082119261fcf749c98c9",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_321316.png": "eac0659d4fd523b1ed20b6612632201918955c700056082119261fcf749c98c9",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_321316.png": "eac0659d4fd523b1ed20b6612632201918955c700056082119261fcf749c98c9"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_400518.png",
+        "image_id": "Sri-Lanka_400518",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_400518.png",
+        "sha256": "d558446bbefd7c5aa133ea116182343a6483835138708be18531387be064116d",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_400518.png": "d558446bbefd7c5aa133ea116182343a6483835138708be18531387be064116d",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_400518.png": "d558446bbefd7c5aa133ea116182343a6483835138708be18531387be064116d"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_52223.png",
+        "image_id": "Sri-Lanka_52223",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_52223.png",
+        "sha256": "37f4463c4f0f38561b8457ceacf43d895b569d30e94e3d5ce8435ee02ed88ef2",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_52223.png": "37f4463c4f0f38561b8457ceacf43d895b569d30e94e3d5ce8435ee02ed88ef2",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_52223.png": "37f4463c4f0f38561b8457ceacf43d895b569d30e94e3d5ce8435ee02ed88ef2"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_523539.png",
+        "image_id": "Sri-Lanka_523539",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_523539.png",
+        "sha256": "c81beff711f59febcc484774697d41f905d0af66dceddb78deeb1034b68cb386",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_523539.png": "c81beff711f59febcc484774697d41f905d0af66dceddb78deeb1034b68cb386",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_523539.png": "c81beff711f59febcc484774697d41f905d0af66dceddb78deeb1034b68cb386"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_534068.png",
+        "image_id": "Sri-Lanka_534068",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_534068.png",
+        "sha256": "cb654a040932a4ddab09b24ba0d87b7598c225eb38004a4f377cb1e37b1c2ee6",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_534068.png": "cb654a040932a4ddab09b24ba0d87b7598c225eb38004a4f377cb1e37b1c2ee6",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_534068.png": "cb654a040932a4ddab09b24ba0d87b7598c225eb38004a4f377cb1e37b1c2ee6"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_612594.png",
+        "image_id": "Sri-Lanka_612594",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_612594.png",
+        "sha256": "315dff8c73bac978851b0262bf1725a01149ff2923fab733eecc90f0d81b11d4",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_612594.png": "315dff8c73bac978851b0262bf1725a01149ff2923fab733eecc90f0d81b11d4",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_612594.png": "315dff8c73bac978851b0262bf1725a01149ff2923fab733eecc90f0d81b11d4"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_713926.png",
+        "image_id": "Sri-Lanka_713926",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_713926.png",
+        "sha256": "b273c54d33159ebc581a278f05bc2b96039199f58f812b887c02815473f06ad6",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_713926.png": "b273c54d33159ebc581a278f05bc2b96039199f58f812b887c02815473f06ad6",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_713926.png": "b273c54d33159ebc581a278f05bc2b96039199f58f812b887c02815473f06ad6"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_748447.png",
+        "image_id": "Sri-Lanka_748447",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_748447.png",
+        "sha256": "4ea49ce17edc00e45bb6da5c9fef8802b351139f7d6c3df27cd954bdb667e250",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_748447.png": "4ea49ce17edc00e45bb6da5c9fef8802b351139f7d6c3df27cd954bdb667e250",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_748447.png": "4ea49ce17edc00e45bb6da5c9fef8802b351139f7d6c3df27cd954bdb667e250"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_845821.png",
+        "image_id": "Sri-Lanka_845821",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_845821.png",
+        "sha256": "c7381527298ce29a4bfb7555cc1d085638ee594aa66aa7ac11526d35d6681814",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_845821.png": "c7381527298ce29a4bfb7555cc1d085638ee594aa66aa7ac11526d35d6681814",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_845821.png": "c7381527298ce29a4bfb7555cc1d085638ee594aa66aa7ac11526d35d6681814"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_847275.png",
+        "image_id": "Sri-Lanka_847275",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_847275.png",
+        "sha256": "1d79e801ad058f7e5189fafea79bd0e2881b7145986040f15c69e0e1d2fe7718",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_847275.png": "1d79e801ad058f7e5189fafea79bd0e2881b7145986040f15c69e0e1d2fe7718",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_847275.png": "1d79e801ad058f7e5189fafea79bd0e2881b7145986040f15c69e0e1d2fe7718"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_849649.png",
+        "image_id": "Sri-Lanka_849649",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_849649.png",
+        "sha256": "9112d6f4ed05e7931e69d06ff57fa17394af51e4e076d8b6b448caf6aa61a437",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_849649.png": "9112d6f4ed05e7931e69d06ff57fa17394af51e4e076d8b6b448caf6aa61a437",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_849649.png": "9112d6f4ed05e7931e69d06ff57fa17394af51e4e076d8b6b448caf6aa61a437"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_85652.png",
+        "image_id": "Sri-Lanka_85652",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_85652.png",
+        "sha256": "eb27bd48439cc82711be5ea3352da7d32aa94bb54753e1d65e1c5c64fc35873b",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_85652.png": "eb27bd48439cc82711be5ea3352da7d32aa94bb54753e1d65e1c5c64fc35873b",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_85652.png": "eb27bd48439cc82711be5ea3352da7d32aa94bb54753e1d65e1c5c64fc35873b"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_916628.png",
+        "image_id": "Sri-Lanka_916628",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_916628.png",
+        "sha256": "ebc40e50d2ef575e2a9e639bb02b238b9ff051301f7693414355ecca44205b2a",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_916628.png": "ebc40e50d2ef575e2a9e639bb02b238b9ff051301f7693414355ecca44205b2a",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_916628.png": "ebc40e50d2ef575e2a9e639bb02b238b9ff051301f7693414355ecca44205b2a"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_922192.png",
+        "image_id": "Sri-Lanka_922192",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_922192.png",
+        "sha256": "5210663b5f2194071fd15baccda187f1f87f00e1b8fda5e64f3a716ecb22528a",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_922192.png": "5210663b5f2194071fd15baccda187f1f87f00e1b8fda5e64f3a716ecb22528a",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_922192.png": "5210663b5f2194071fd15baccda187f1f87f00e1b8fda5e64f3a716ecb22528a"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_92824.png",
+        "image_id": "Sri-Lanka_92824",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_92824.png",
+        "sha256": "b7076cbd929747920d4df869f5f9b3c842b56309ffbb66e2e6ee513951d1f48a",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Sri-Lanka_92824.png": "b7076cbd929747920d4df869f5f9b3c842b56309ffbb66e2e6ee513951d1f48a",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Sri-Lanka_92824.png": "b7076cbd929747920d4df869f5f9b3c842b56309ffbb66e2e6ee513951d1f48a"
+        }
+      }
+    ],
+    "validation": [
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_103757.png",
+        "image_id": "Bolivia_103757",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_103757.png",
+        "sha256": "51e651bccfccf7f68b9d7558b63e5d3438dc90a3891da6c483246169243febc7",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_103757.png": "51e651bccfccf7f68b9d7558b63e5d3438dc90a3891da6c483246169243febc7",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_103757.png": "51e651bccfccf7f68b9d7558b63e5d3438dc90a3891da6c483246169243febc7"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_129334.png",
+        "image_id": "Bolivia_129334",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_129334.png",
+        "sha256": "d9e18310a0cf75d7bac84d590b99500c743cc9160c467f58e9d2fa01ec5d14d9",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_129334.png": "d9e18310a0cf75d7bac84d590b99500c743cc9160c467f58e9d2fa01ec5d14d9",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_129334.png": "d9e18310a0cf75d7bac84d590b99500c743cc9160c467f58e9d2fa01ec5d14d9"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_195474.png",
+        "image_id": "Bolivia_195474",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_195474.png",
+        "sha256": "7eea381d5d5f8146ffefbb5d7df5b5953df017c78fac25075e50357831c73680",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_195474.png": "7eea381d5d5f8146ffefbb5d7df5b5953df017c78fac25075e50357831c73680",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_195474.png": "7eea381d5d5f8146ffefbb5d7df5b5953df017c78fac25075e50357831c73680"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_233925.png",
+        "image_id": "Bolivia_233925",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_233925.png",
+        "sha256": "a58e7ee3c17c2cb0f4fe3538ca306ef169693c0667049d35081fcfa322d905a5",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_233925.png": "a58e7ee3c17c2cb0f4fe3538ca306ef169693c0667049d35081fcfa322d905a5",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_233925.png": "a58e7ee3c17c2cb0f4fe3538ca306ef169693c0667049d35081fcfa322d905a5"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_242570.png",
+        "image_id": "Bolivia_242570",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_242570.png",
+        "sha256": "ce5d03a719d61f60b64b613ef29c751f304ed67ea3652846d387b7988ef0e6d0",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_242570.png": "ce5d03a719d61f60b64b613ef29c751f304ed67ea3652846d387b7988ef0e6d0",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_242570.png": "ce5d03a719d61f60b64b613ef29c751f304ed67ea3652846d387b7988ef0e6d0"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_294583.png",
+        "image_id": "Bolivia_294583",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_294583.png",
+        "sha256": "f3a8605638dc29508ed33a86d497d02b4f71bb7fb6407371774710a8a2443fc7",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_294583.png": "f3a8605638dc29508ed33a86d497d02b4f71bb7fb6407371774710a8a2443fc7",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_294583.png": "f3a8605638dc29508ed33a86d497d02b4f71bb7fb6407371774710a8a2443fc7"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_314919.png",
+        "image_id": "Bolivia_314919",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_314919.png",
+        "sha256": "9a9900f81d21871ceedc7edeb7e1b45e51734faf36c0ad424cc10f82a04f26c3",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_314919.png": "9a9900f81d21871ceedc7edeb7e1b45e51734faf36c0ad424cc10f82a04f26c3",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_314919.png": "9a9900f81d21871ceedc7edeb7e1b45e51734faf36c0ad424cc10f82a04f26c3"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_432776.png",
+        "image_id": "Bolivia_432776",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_432776.png",
+        "sha256": "db481a74589390ecbd7f39354cc1e5994d5e581c6892ee113ddd559610ff4795",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_432776.png": "db481a74589390ecbd7f39354cc1e5994d5e581c6892ee113ddd559610ff4795",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_432776.png": "db481a74589390ecbd7f39354cc1e5994d5e581c6892ee113ddd559610ff4795"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_76104.png",
+        "image_id": "Bolivia_76104",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_76104.png",
+        "sha256": "6a6e8bb59596f0889b499bddfed50a69568bb29aed57d6e451ab4614ce840add",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Bolivia_76104.png": "6a6e8bb59596f0889b499bddfed50a69568bb29aed57d6e451ab4614ce840add",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Bolivia_76104.png": "6a6e8bb59596f0889b499bddfed50a69568bb29aed57d6e451ab4614ce840add"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_1027214.png",
+        "image_id": "Pakistan_1027214",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_1027214.png",
+        "sha256": "72bd0824ae05d317505e061d41bd412c4390c36a0306e7f5e345534eb623680c",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_1027214.png": "72bd0824ae05d317505e061d41bd412c4390c36a0306e7f5e345534eb623680c",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_1027214.png": "72bd0824ae05d317505e061d41bd412c4390c36a0306e7f5e345534eb623680c"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_1036366.png",
+        "image_id": "Pakistan_1036366",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_1036366.png",
+        "sha256": "95f5db7074dfba98544c1db03a7d8bfd2afed0f79ae845360ea7c89e994febfb",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_1036366.png": "95f5db7074dfba98544c1db03a7d8bfd2afed0f79ae845360ea7c89e994febfb",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_1036366.png": "95f5db7074dfba98544c1db03a7d8bfd2afed0f79ae845360ea7c89e994febfb"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_132143.png",
+        "image_id": "Pakistan_132143",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_132143.png",
+        "sha256": "619293dba99740023a62fd24c5d6126935b20be9d66f5f4c60d1d79b9b6c1a49",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_132143.png": "619293dba99740023a62fd24c5d6126935b20be9d66f5f4c60d1d79b9b6c1a49",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_132143.png": "619293dba99740023a62fd24c5d6126935b20be9d66f5f4c60d1d79b9b6c1a49"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_167553.png",
+        "image_id": "Pakistan_167553",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_167553.png",
+        "sha256": "fc1a975be7b5ab8994be4c82fa5b5fb2c3863647d778166325fba2678a4850ec",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_167553.png": "fc1a975be7b5ab8994be4c82fa5b5fb2c3863647d778166325fba2678a4850ec",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_167553.png": "fc1a975be7b5ab8994be4c82fa5b5fb2c3863647d778166325fba2678a4850ec"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_210595.png",
+        "image_id": "Pakistan_210595",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_210595.png",
+        "sha256": "77f83bf7c334eb8f181d72a6d4a732312c54e859a38c5c7546bcaaaffb978852",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_210595.png": "77f83bf7c334eb8f181d72a6d4a732312c54e859a38c5c7546bcaaaffb978852",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_210595.png": "77f83bf7c334eb8f181d72a6d4a732312c54e859a38c5c7546bcaaaffb978852"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_336228.png",
+        "image_id": "Pakistan_336228",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_336228.png",
+        "sha256": "2604287e41f070b98cfc0ecb59dbebf26cf9b480117ac3bfe7f5d9189fdbdefa",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_336228.png": "2604287e41f070b98cfc0ecb59dbebf26cf9b480117ac3bfe7f5d9189fdbdefa",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_336228.png": "2604287e41f070b98cfc0ecb59dbebf26cf9b480117ac3bfe7f5d9189fdbdefa"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_35915.png",
+        "image_id": "Pakistan_35915",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_35915.png",
+        "sha256": "7cadd401185c1cdd449fa9db5dce5d0a999472f50be405bafe9e14a9ba8213e9",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_35915.png": "7cadd401185c1cdd449fa9db5dce5d0a999472f50be405bafe9e14a9ba8213e9",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_35915.png": "7cadd401185c1cdd449fa9db5dce5d0a999472f50be405bafe9e14a9ba8213e9"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_366265.png",
+        "image_id": "Pakistan_366265",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_366265.png",
+        "sha256": "a89b94acab7a4c7b2f647e63d192d17a9a7a800574c1ff356c46c6ba1da8cb9f",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_366265.png": "a89b94acab7a4c7b2f647e63d192d17a9a7a800574c1ff356c46c6ba1da8cb9f",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_366265.png": "a89b94acab7a4c7b2f647e63d192d17a9a7a800574c1ff356c46c6ba1da8cb9f"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_43105.png",
+        "image_id": "Pakistan_43105",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_43105.png",
+        "sha256": "e4a88cf4e330131be46c3401879f96e27abc906bd0d5c49ffd09e5289a6f0b1a",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_43105.png": "e4a88cf4e330131be46c3401879f96e27abc906bd0d5c49ffd09e5289a6f0b1a",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_43105.png": "e4a88cf4e330131be46c3401879f96e27abc906bd0d5c49ffd09e5289a6f0b1a"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_528249.png",
+        "image_id": "Pakistan_528249",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_528249.png",
+        "sha256": "b2320e79478ceb2ef811e160bae3db482c04ac18250c6fab627d72c65d057700",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_528249.png": "b2320e79478ceb2ef811e160bae3db482c04ac18250c6fab627d72c65d057700",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_528249.png": "b2320e79478ceb2ef811e160bae3db482c04ac18250c6fab627d72c65d057700"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_65724.png",
+        "image_id": "Pakistan_65724",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_65724.png",
+        "sha256": "1a6a7798f4c0f1c4ccb317ceaf6887751e313eeb93f72bcc13bddcfe8adc3214",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_65724.png": "1a6a7798f4c0f1c4ccb317ceaf6887751e313eeb93f72bcc13bddcfe8adc3214",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_65724.png": "1a6a7798f4c0f1c4ccb317ceaf6887751e313eeb93f72bcc13bddcfe8adc3214"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_667363.png",
+        "image_id": "Pakistan_667363",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_667363.png",
+        "sha256": "7a30eff216967f603ed482cdc8f6293815496b7e1d096a0ac8f89b8a28860e93",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_667363.png": "7a30eff216967f603ed482cdc8f6293815496b7e1d096a0ac8f89b8a28860e93",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_667363.png": "7a30eff216967f603ed482cdc8f6293815496b7e1d096a0ac8f89b8a28860e93"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_740461.png",
+        "image_id": "Pakistan_740461",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_740461.png",
+        "sha256": "157e9d3c4eec9d49992023b270d008448ef5baef4491ea68a319aa41c4930f6b",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_740461.png": "157e9d3c4eec9d49992023b270d008448ef5baef4491ea68a319aa41c4930f6b",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_740461.png": "157e9d3c4eec9d49992023b270d008448ef5baef4491ea68a319aa41c4930f6b"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_760290.png",
+        "image_id": "Pakistan_760290",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_760290.png",
+        "sha256": "0b1450e7c21d78d29fc5f1e090b58354661c7e85253d3f3a94f32f7378079582",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_760290.png": "0b1450e7c21d78d29fc5f1e090b58354661c7e85253d3f3a94f32f7378079582",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_760290.png": "0b1450e7c21d78d29fc5f1e090b58354661c7e85253d3f3a94f32f7378079582"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_849790.png",
+        "image_id": "Pakistan_849790",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_849790.png",
+        "sha256": "1cb52168c2d1a1b0bba3bf817c29c36fbd874a8cf940d4cb8cc6722737722d76",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_849790.png": "1cb52168c2d1a1b0bba3bf817c29c36fbd874a8cf940d4cb8cc6722737722d76",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_849790.png": "1cb52168c2d1a1b0bba3bf817c29c36fbd874a8cf940d4cb8cc6722737722d76"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_94095.png",
+        "image_id": "Pakistan_94095",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_94095.png",
+        "sha256": "770e8f4939f88e1013f33061fd6d14ae5009b59907c9fe03f9bce7ae10726d3d",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Pakistan_94095.png": "770e8f4939f88e1013f33061fd6d14ae5009b59907c9fe03f9bce7ae10726d3d",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Pakistan_94095.png": "770e8f4939f88e1013f33061fd6d14ae5009b59907c9fe03f9bce7ae10726d3d"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_1167260.png",
+        "image_id": "Spain_1167260",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_1167260.png",
+        "sha256": "c09e58b91776cdf25903132c87bc2fa7686b0ad477c1e68ed59c0e7febc273d4",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_1167260.png": "c09e58b91776cdf25903132c87bc2fa7686b0ad477c1e68ed59c0e7febc273d4",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_1167260.png": "c09e58b91776cdf25903132c87bc2fa7686b0ad477c1e68ed59c0e7febc273d4"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_2472849.png",
+        "image_id": "Spain_2472849",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_2472849.png",
+        "sha256": "c7ba6c6ba39beabd2872ba401723555e9ac66b64e3b917bc67450619457d8b99",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_2472849.png": "c7ba6c6ba39beabd2872ba401723555e9ac66b64e3b917bc67450619457d8b99",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_2472849.png": "c7ba6c6ba39beabd2872ba401723555e9ac66b64e3b917bc67450619457d8b99"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_2523247.png",
+        "image_id": "Spain_2523247",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_2523247.png",
+        "sha256": "e53275ab38b2438faeb3393bf4fc48ce203e4fc621785d314f1af3beddfecf7c",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_2523247.png": "e53275ab38b2438faeb3393bf4fc48ce203e4fc621785d314f1af3beddfecf7c",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_2523247.png": "e53275ab38b2438faeb3393bf4fc48ce203e4fc621785d314f1af3beddfecf7c"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_3285448.png",
+        "image_id": "Spain_3285448",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_3285448.png",
+        "sha256": "7569984cd3fcfcfd58ca0caab3b0cc32984d4f3364c3091e8f64ef5706bb7daf",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_3285448.png": "7569984cd3fcfcfd58ca0caab3b0cc32984d4f3364c3091e8f64ef5706bb7daf",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_3285448.png": "7569984cd3fcfcfd58ca0caab3b0cc32984d4f3364c3091e8f64ef5706bb7daf"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_4282030.png",
+        "image_id": "Spain_4282030",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_4282030.png",
+        "sha256": "f79d637e2b431ad0c5850c8342a13590e1e3038fef4b2691ccd4d37c02f71bd4",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_4282030.png": "f79d637e2b431ad0c5850c8342a13590e1e3038fef4b2691ccd4d37c02f71bd4",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_4282030.png": "f79d637e2b431ad0c5850c8342a13590e1e3038fef4b2691ccd4d37c02f71bd4"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_5650136.png",
+        "image_id": "Spain_5650136",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_5650136.png",
+        "sha256": "8105b27ab0f1258dc6e469f2d0744d9af346ce18f19fc505f93e7cef76f687e3",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_5650136.png": "8105b27ab0f1258dc6e469f2d0744d9af346ce18f19fc505f93e7cef76f687e3",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_5650136.png": "8105b27ab0f1258dc6e469f2d0744d9af346ce18f19fc505f93e7cef76f687e3"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_5816638.png",
+        "image_id": "Spain_5816638",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_5816638.png",
+        "sha256": "ea6e9b9c3e797d03becc1d9fdd8a46db5e585551be129e9b479675cd69017f8c",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_5816638.png": "ea6e9b9c3e797d03becc1d9fdd8a46db5e585551be129e9b479675cd69017f8c",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_5816638.png": "ea6e9b9c3e797d03becc1d9fdd8a46db5e585551be129e9b479675cd69017f8c"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_5923267.png",
+        "image_id": "Spain_5923267",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_5923267.png",
+        "sha256": "805828569aabcc35193c10647d23084f4d2dc75c928117e3f40b589be1349eed",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_5923267.png": "805828569aabcc35193c10647d23084f4d2dc75c928117e3f40b589be1349eed",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_5923267.png": "805828569aabcc35193c10647d23084f4d2dc75c928117e3f40b589be1349eed"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_6199994.png",
+        "image_id": "Spain_6199994",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_6199994.png",
+        "sha256": "f3687a8e45fc8690629b6c89ec0f88e98b585e18b17918bf6514fbe42511bc72",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_6199994.png": "f3687a8e45fc8690629b6c89ec0f88e98b585e18b17918bf6514fbe42511bc72",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_6199994.png": "f3687a8e45fc8690629b6c89ec0f88e98b585e18b17918bf6514fbe42511bc72"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_6860600.png",
+        "image_id": "Spain_6860600",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_6860600.png",
+        "sha256": "f097ab814ca9f49086fcd96d5af8adc35e49df64a2be8662e474a1953121eb8d",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_6860600.png": "f097ab814ca9f49086fcd96d5af8adc35e49df64a2be8662e474a1953121eb8d",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_6860600.png": "f097ab814ca9f49086fcd96d5af8adc35e49df64a2be8662e474a1953121eb8d"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_7370579.png",
+        "image_id": "Spain_7370579",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_7370579.png",
+        "sha256": "29f01103d098d80ed8de5f0f9fd50dde2bdea57cff69fa64bb8b2f378a97cbb4",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_7370579.png": "29f01103d098d80ed8de5f0f9fd50dde2bdea57cff69fa64bb8b2f378a97cbb4",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_7370579.png": "29f01103d098d80ed8de5f0f9fd50dde2bdea57cff69fa64bb8b2f378a97cbb4"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_7387658.png",
+        "image_id": "Spain_7387658",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_7387658.png",
+        "sha256": "cee26cb6be67ed7eafb777e606471cf49e7f4391a9c23b125f49d1d3cb534aa6",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_7387658.png": "cee26cb6be67ed7eafb777e606471cf49e7f4391a9c23b125f49d1d3cb534aa6",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_7387658.png": "cee26cb6be67ed7eafb777e606471cf49e7f4391a9c23b125f49d1d3cb534aa6"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_7558720.png",
+        "image_id": "Spain_7558720",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_7558720.png",
+        "sha256": "054cf4ae7bdc9cbc83552f9833223690f2a0203f6aecd58f64958dbd3247d97b",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_7558720.png": "054cf4ae7bdc9cbc83552f9833223690f2a0203f6aecd58f64958dbd3247d97b",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_7558720.png": "054cf4ae7bdc9cbc83552f9833223690f2a0203f6aecd58f64958dbd3247d97b"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_8372658.png",
+        "image_id": "Spain_8372658",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_8372658.png",
+        "sha256": "4ae27fbcd41a670d9cbd3fefe62c18d3c1f02aee4edddbd130a8c6fce4936330",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_8372658.png": "4ae27fbcd41a670d9cbd3fefe62c18d3c1f02aee4edddbd130a8c6fce4936330",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_8372658.png": "4ae27fbcd41a670d9cbd3fefe62c18d3c1f02aee4edddbd130a8c6fce4936330"
+        }
+      },
+      {
+        "declared_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_8565131.png",
+        "image_id": "Spain_8565131",
+        "resolved_path": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_8565131.png",
+        "sha256": "44e152f47be6f9e139771a58e66a81e55c654102b3250e6a9c0530104fb424d3",
+        "verified_copies": {
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm/data/images/pseudo_rgb/Spain_8565131.png": "44e152f47be6f9e139771a58e66a81e55c654102b3250e6a9c0530104fb424d3",
+          "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/data/images/pseudo_rgb/Spain_8565131.png": "44e152f47be6f9e139771a58e66a81e55c654102b3250e6a9c0530104fb424d3"
+        }
+      }
+    ]
+  },
+  "inference_seconds": {
+    "test": 1.287765526009025,
+    "validation": 1.2817298860027222
+  },
+  "library_versions": {
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.9",
+    "numpy": "2.2.6",
+    "scikit-learn": "1.7.2",
+    "torch": "2.14.0+cpu",
+    "torchvision": "0.29.0+cpu"
+  },
+  "preprocessing": {
+    "antialias": true,
+    "input_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize": "full-chip",
+    "scale": "uint8_to_0_1",
+    "size": [
+      224,
+      224
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "training_augmentation": {
+      "horizontal_flip": 0.5,
+      "vertical_flip": 0.5
+    }
+  },
+  "representation": "pseudo_rgb",
+  "samples": {
+    "test": 40,
+    "validation": 40
+  },
+  "seed": 42,
+  "split_sha256": {
+    "test": "b09ac2f4bd9149c41c85fc593629694a96497a44246981d10c36ac759c0ed91f",
+    "train": "ad47abee8ae2f427c4594f8dcfb210c890dade673a55d4b3c724ed7a6a6f388e",
+    "validation": "1fce5de9ee3b6c2844eb7c20463e380e37605077ea2130552bdd8fe3759b67f1"
+  },
+  "status": "complete",
+  "test_samples_used_for_selection": 0,
+  "test_samples_used_for_training": 0,
+  "timestamp_utc": "2026-09-27T14:33:39.018791+00:00",
+  "training_config": "/home/s299259068/Área de Trabalho/Projetos/2026/artigo_llm_git/mllm_sentinel_sar/models/resnet18_pseudo_rgb/training_config.json",
+  "weights_origin": {
+    "cache_path": "/tmp/resnet18-verification/weights/checkpoints/resnet18-f37072fd.pth",
+    "dataset": "ImageNet-1K",
+    "enum": "ResNet18_Weights.IMAGENET1K_V1",
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "url": "https://download.pytorch.org/models/resnet18-f37072fd.pth"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "batch_size": 8,
+  "device": "cpu",
+  "estimated_25_epochs_seconds": 255.11909589544666,
+  "estimated_validation_epoch_seconds": 1.382748507494398,
+  "head-only": {
+    "estimated_train_epoch_seconds": 6.213497095974162,
+    "measured_seconds": 0.7766871369967703
+  },
+  "layer4+fc": {
+    "estimated_train_epoch_seconds": 9.177722360007465,
+    "measured_seconds": 1.147215295000933
+  },
+  "note": "Timing only; model discarded, no test access, full run reinitializes seed/model.",
+  "samples_train_measured": 24,
+  "samples_validation_measured": 16,
+  "setup_seconds": 2.108978754011332,
+  "threads": 4,
+  "weights_origin": {
+    "cache_path": "/tmp/resnet18-verification/weights/checkpoints/resnet18-f37072fd.pth",
+    "dataset": "ImageNet-1K",
+    "enum": "ResNet18_Weights.IMAGENET1K_V1",
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "url": "https://download.pytorch.org/models/resnet18-f37072fd.pth"
+  }
+}

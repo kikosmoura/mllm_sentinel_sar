@@ -1,0 +1,13 @@
+{
+  "best_epoch": 7,
+  "best_phase": "layer4+fc",
+  "checkpoint_sha256": "d3e2a04992c4eed19d67a1e2b7c28632f8da293f1c4dff6c652e2180f3d2add4",
+  "epochs_executed": 12,
+  "layer4_updated": true,
+  "stop_reason": "early_stopping",
+  "test_access": "pre-execution audit metadata only; test CSV/images/labels not opened",
+  "training_complete": true,
+  "training_seconds": 142.38800580101088,
+  "unchanged_batchnorm_statistics": 60,
+  "unchanged_frozen_state_entries": 90
+}
